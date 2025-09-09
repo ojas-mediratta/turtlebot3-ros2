@@ -1,4 +1,4 @@
-# CS 7785 — Intro to Robotics Research
+# ROS 2 and Turtlebot3 Exploration and Experiments
 
 This repository contains my personal coursework, experiments, and projects for **CS 7785: Introduction to Robotics Research** at Georgia Tech.  
 It is intended solely as a record of my own work and for future personal reference.
