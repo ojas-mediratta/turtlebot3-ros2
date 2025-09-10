@@ -6,7 +6,7 @@ It is intended solely as a record of my own work and for future personal referen
 ## 🛠️ Tech & Tools
 - **Languages**: Python, C++
 - **Frameworks**: ROS2 Humble, OpenCV, PyTorch/TensorFlow
-- **Platforms**: TurtleBot, Gazebo, PyBullet, custom hardware
+- **Platforms**: TurtleBot, Gazebo, RQT
 
 ## 🚀 Goals
 - Build practical skills in robotics research methods
