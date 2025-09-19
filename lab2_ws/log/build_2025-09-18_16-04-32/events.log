@@ -1,0 +1,112 @@
+[0.000000] (-) TimerEvent: {}
+[0.001623] (autobots_object_follower) JobQueued: {'identifier': 'autobots_object_follower', 'dependencies': OrderedDict()}
+[0.001936] (autobots_object_follower) JobStarted: {'identifier': 'autobots_object_follower'}
+[0.098629] (-) TimerEvent: {}
+[0.201447] (-) TimerEvent: {}
+[0.302245] (-) TimerEvent: {}
+[0.403600] (-) TimerEvent: {}
+[0.504744] (-) TimerEvent: {}
+[0.605470] (-) TimerEvent: {}
+[0.706283] (-) TimerEvent: {}
+[0.807083] (-) TimerEvent: {}
+[0.907765] (-) TimerEvent: {}
+[1.008466] (-) TimerEvent: {}
+[1.109151] (-) TimerEvent: {}
+[1.209779] (-) TimerEvent: {}
+[1.310601] (-) TimerEvent: {}
+[1.411704] (-) TimerEvent: {}
+[1.512444] (-) TimerEvent: {}
+[1.613173] (-) TimerEvent: {}
+[1.714305] (-) TimerEvent: {}
+[1.815992] (-) TimerEvent: {}
+[1.916623] (-) TimerEvent: {}
+[2.017268] (-) TimerEvent: {}
+[2.117916] (-) TimerEvent: {}
+[2.218563] (-) TimerEvent: {}
+[2.319233] (-) TimerEvent: {}
+[2.419875] (-) TimerEvent: {}
+[2.520609] (-) TimerEvent: {}
+[2.621239] (-) TimerEvent: {}
+[2.721856] (-) TimerEvent: {}
+[2.822461] (-) TimerEvent: {}
+[2.923120] (-) TimerEvent: {}
+[3.023760] (-) TimerEvent: {}
+[3.124415] (-) TimerEvent: {}
+[3.225043] (-) TimerEvent: {}
+[3.325688] (-) TimerEvent: {}
+[3.426313] (-) TimerEvent: {}
+[3.526944] (-) TimerEvent: {}
+[3.627596] (-) TimerEvent: {}
+[3.728249] (-) TimerEvent: {}
+[3.829160] (-) TimerEvent: {}
+[3.930751] (-) TimerEvent: {}
+[3.983766] (autobots_object_follower) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/autobots_object_follower', 'build', '--build-base', '/home/burger/autobots/lab2_ws/build/autobots_object_follower/build', 'install', '--record', '/home/burger/autobots/lab2_ws/build/autobots_object_follower/install.log', '--single-version-externally-managed'], 'cwd': '/home/burger/autobots/lab2_ws/src/autobots_object_follower', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'burger', 'SSH_CLIENT': '192.168.0.110 56823 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/burger/.vscode-server/cli/servers/Stable-f220831ea2d946c0dcb0f3eaa480eb435a2c1260/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/burger/dontTouch_ws/install/v4l2_camera/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/burger/.vscode-server/cli/servers/Stable-f220831ea2d946c0dcb0f3eaa480eb435a2c1260/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/burger', 'OLDPWD': '/home/burger/autobots/lab2_ws', 'TERM_PROGRAM_VERSION': '1.104.0', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-f8a9b6d2-ad81-4a86-85bc-6f2c3e3b9f8e.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/burger/.vscode-server/cli/servers/Stable-f220831ea2d946c0dcb0f3eaa480eb435a2c1260/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/burger/.vscode-server/cli/servers/Stable-f220831ea2d946c0dcb0f3eaa480eb435a2c1260/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/certs/ca-certificates.crt', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/burger/autobots/lab2_ws/install:/home/burger/lab2_ws/install:/home/burger/dontTouch_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'burger', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '4', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/burger/.vscode-server/cli/servers/Stable-f220831ea2d946c0dcb0f3eaa480eb435a2c1260/server/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/burger/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand', 'XDG_RUNTIME_DIR': '/run/user/1000', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-3b2f703d08.sock', 'TERM_PROGRAM': 'vscode', 'ROS_DOMAIN_ID': '76', 'AMENT_PREFIX_PATH': '/home/burger/autobots/lab2_ws/install/autobots_object_follower:/home/burger/lab2_ws/install/autobots_object_follower:/home/burger/dontTouch_ws/install/v4l2_camera:/home/burger/dontTouch_ws/install/turtlebot3:/home/burger/dontTouch_ws/install/turtlebot3_teleop:/home/burger/dontTouch_ws/install/turtlebot3_bringup:/home/burger/dontTouch_ws/install/turtlebot3_node:/home/burger/dontTouch_ws/install/turtlebot3_example:/home/burger/dontTouch_ws/install/turtlebot3_description:/home/burger/dontTouch_ws/install/ld08_driver:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/burger/autobots/lab2_ws/build/autobots_object_follower', 'TURTLEBOT3_MODEL': 'burger', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.0.110 56823 192.168.0.70 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'LDS_MODEL': 'LDS-02', 'PYTHONPATH': '/home/burger/autobots/lab2_ws/build/autobots_object_follower/prefix_override:/home/burger/autobots/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages:/home/burger/autobots/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages:/home/burger/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages:/home/burger/dontTouch_ws/build/turtlebot3_teleop:/home/burger/dontTouch_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/home/burger/dontTouch_ws/build/turtlebot3_example:/home/burger/dontTouch_ws/install/turtlebot3_example/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/burger/dontTouch_ws/install/v4l2_camera:/home/burger/dontTouch_ws/install/turtlebot3:/home/burger/dontTouch_ws/install/turtlebot3_bringup:/home/burger/dontTouch_ws/install/turtlebot3_node:/home/burger/dontTouch_ws/install/turtlebot3_description:/home/burger/dontTouch_ws/install/ld08_driver'}, 'shell': False}
+[4.030908] (-) TimerEvent: {}
+[4.131757] (-) TimerEvent: {}
+[4.232479] (-) TimerEvent: {}
+[4.333177] (-) TimerEvent: {}
+[4.433845] (-) TimerEvent: {}
+[4.534652] (-) TimerEvent: {}
+[4.635508] (-) TimerEvent: {}
+[4.736214] (-) TimerEvent: {}
+[4.836815] (-) TimerEvent: {}
+[4.906016] (autobots_object_follower) StdoutLine: {'line': b'running egg_info\n'}
+[4.936969] (-) TimerEvent: {}
+[4.980088] (autobots_object_follower) StdoutLine: {'line': b'writing ../../build/autobots_object_follower/autobots_object_follower.egg-info/PKG-INFO\n'}
+[4.981871] (autobots_object_follower) StdoutLine: {'line': b'writing dependency_links to ../../build/autobots_object_follower/autobots_object_follower.egg-info/dependency_links.txt\n'}
+[4.984521] (autobots_object_follower) StdoutLine: {'line': b'writing entry points to ../../build/autobots_object_follower/autobots_object_follower.egg-info/entry_points.txt\n'}
+[4.986842] (autobots_object_follower) StdoutLine: {'line': b'writing requirements to ../../build/autobots_object_follower/autobots_object_follower.egg-info/requires.txt\n'}
+[4.988796] (autobots_object_follower) StdoutLine: {'line': b'writing top-level names to ../../build/autobots_object_follower/autobots_object_follower.egg-info/top_level.txt\n'}
+[5.037397] (-) TimerEvent: {}
+[5.138497] (-) TimerEvent: {}
+[5.152640] (autobots_object_follower) StdoutLine: {'line': b"reading manifest file '../../build/autobots_object_follower/autobots_object_follower.egg-info/SOURCES.txt'\n"}
+[5.157062] (autobots_object_follower) StdoutLine: {'line': b"writing manifest file '../../build/autobots_object_follower/autobots_object_follower.egg-info/SOURCES.txt'\n"}
+[5.157870] (autobots_object_follower) StdoutLine: {'line': b'running build\n'}
+[5.158422] (autobots_object_follower) StdoutLine: {'line': b'running build_py\n'}
+[5.159317] (autobots_object_follower) StdoutLine: {'line': b'copying autobots_object_follower/constants.py -> /home/burger/autobots/lab2_ws/build/autobots_object_follower/build/lib/autobots_object_follower\n'}
+[5.160286] (autobots_object_follower) StdoutLine: {'line': b'copying autobots_object_follower/rotate_robot_node.py -> /home/burger/autobots/lab2_ws/build/autobots_object_follower/build/lib/autobots_object_follower\n'}
+[5.161774] (autobots_object_follower) StdoutLine: {'line': b'copying autobots_object_follower/find_object_node.py -> /home/burger/autobots/lab2_ws/build/autobots_object_follower/build/lib/autobots_object_follower\n'}
+[5.163477] (autobots_object_follower) StdoutLine: {'line': b'running install\n'}
+[5.166062] (autobots_object_follower) StderrLine: {'line': b'/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.\n'}
+[5.166656] (autobots_object_follower) StderrLine: {'line': b'!!\n'}
+[5.166963] (autobots_object_follower) StderrLine: {'line': b'\n'}
+[5.167369] (autobots_object_follower) StderrLine: {'line': b'        ********************************************************************************\n'}
+[5.167737] (autobots_object_follower) StderrLine: {'line': b'        Please avoid running ``setup.py`` directly.\n'}
+[5.168075] (autobots_object_follower) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[5.168390] (autobots_object_follower) StderrLine: {'line': b'        standards-based tools.\n'}
+[5.168713] (autobots_object_follower) StderrLine: {'line': b'\n'}
+[5.169018] (autobots_object_follower) StderrLine: {'line': b'        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.\n'}
+[5.169337] (autobots_object_follower) StderrLine: {'line': b'        ********************************************************************************\n'}
+[5.169652] (autobots_object_follower) StderrLine: {'line': b'\n'}
+[5.169958] (autobots_object_follower) StderrLine: {'line': b'!!\n'}
+[5.170258] (autobots_object_follower) StderrLine: {'line': b'  self.initialize_options()\n'}
+[5.191524] (autobots_object_follower) StdoutLine: {'line': b'running install_lib\n'}
+[5.238670] (-) TimerEvent: {}
+[5.261498] (autobots_object_follower) StdoutLine: {'line': b'copying /home/burger/autobots/lab2_ws/build/autobots_object_follower/build/lib/autobots_object_follower/constants.py -> /home/burger/autobots/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages/autobots_object_follower\n'}
+[5.262457] (autobots_object_follower) StdoutLine: {'line': b'copying /home/burger/autobots/lab2_ws/build/autobots_object_follower/build/lib/autobots_object_follower/rotate_robot_node.py -> /home/burger/autobots/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages/autobots_object_follower\n'}
+[5.263966] (autobots_object_follower) StdoutLine: {'line': b'copying /home/burger/autobots/lab2_ws/build/autobots_object_follower/build/lib/autobots_object_follower/find_object_node.py -> /home/burger/autobots/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages/autobots_object_follower\n'}
+[5.266773] (autobots_object_follower) StdoutLine: {'line': b'byte-compiling /home/burger/autobots/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages/autobots_object_follower/constants.py to constants.cpython-310.pyc\n'}
+[5.268755] (autobots_object_follower) StdoutLine: {'line': b'byte-compiling /home/burger/autobots/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages/autobots_object_follower/rotate_robot_node.py to rotate_robot_node.cpython-310.pyc\n'}
+[5.271656] (autobots_object_follower) StdoutLine: {'line': b'byte-compiling /home/burger/autobots/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages/autobots_object_follower/find_object_node.py to find_object_node.cpython-310.pyc\n'}
+[5.275817] (autobots_object_follower) StdoutLine: {'line': b'running install_data\n'}
+[5.335106] (autobots_object_follower) StdoutLine: {'line': b'running install_egg_info\n'}
+[5.338824] (-) TimerEvent: {}
+[5.398401] (autobots_object_follower) StdoutLine: {'line': b"removing '/home/burger/autobots/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages/autobots_object_follower-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[5.400237] (autobots_object_follower) StdoutLine: {'line': b'Copying ../../build/autobots_object_follower/autobots_object_follower.egg-info to /home/burger/autobots/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages/autobots_object_follower-0.0.0-py3.10.egg-info\n'}
+[5.405719] (autobots_object_follower) StdoutLine: {'line': b'running install_scripts\n'}
+[5.438998] (-) TimerEvent: {}
+[5.539814] (-) TimerEvent: {}
+[5.640433] (-) TimerEvent: {}
+[5.741060] (-) TimerEvent: {}
+[5.841659] (-) TimerEvent: {}
+[5.942313] (-) TimerEvent: {}
+[6.017068] (autobots_object_follower) StdoutLine: {'line': b'Installing find_object script to /home/burger/autobots/lab2_ws/install/autobots_object_follower/lib/autobots_object_follower\n'}
+[6.017871] (autobots_object_follower) StdoutLine: {'line': b'Installing rotate_robot script to /home/burger/autobots/lab2_ws/install/autobots_object_follower/lib/autobots_object_follower\n'}
+[6.019219] (autobots_object_follower) StdoutLine: {'line': b"writing list of installed files to '/home/burger/autobots/lab2_ws/build/autobots_object_follower/install.log'\n"}
+[6.042628] (-) TimerEvent: {}
+[6.143854] (-) TimerEvent: {}
+[6.165974] (autobots_object_follower) CommandEnded: {'returncode': 0}
+[6.244119] (-) TimerEvent: {}
+[6.345173] (-) TimerEvent: {}
+[6.390467] (autobots_object_follower) JobEnded: {'identifier': 'autobots_object_follower', 'rc': 0}
+[6.393571] (-) EventReactorShutdown: {}

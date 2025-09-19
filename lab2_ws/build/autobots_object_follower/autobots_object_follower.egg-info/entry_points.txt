@@ -1,0 +1,3 @@
+[console_scripts]
+find_object = autobots_object_follower.find_object_node:main
+rotate_robot = autobots_object_follower.rotate_robot_node:main

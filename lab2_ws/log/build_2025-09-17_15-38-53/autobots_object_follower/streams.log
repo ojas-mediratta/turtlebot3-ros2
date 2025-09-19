@@ -1,0 +1,36 @@
+[4.715s] Invoking command in '/home/burger/lab2_ws/src/autobots_object_follower': PYTHONPATH=/home/burger/lab2_ws/build/autobots_object_follower/prefix_override:/home/burger/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/autobots_object_follower build --build-base /home/burger/lab2_ws/build/autobots_object_follower/build install --record /home/burger/lab2_ws/build/autobots_object_follower/install.log --single-version-externally-managed
+[5.892s] running egg_info
+[5.959s] writing ../../build/autobots_object_follower/autobots_object_follower.egg-info/PKG-INFO
+[5.961s] writing dependency_links to ../../build/autobots_object_follower/autobots_object_follower.egg-info/dependency_links.txt
+[5.965s] deleting ../../build/autobots_object_follower/autobots_object_follower.egg-info/entry_points.txt
+[5.967s] writing requirements to ../../build/autobots_object_follower/autobots_object_follower.egg-info/requires.txt
+[5.970s] writing top-level names to ../../build/autobots_object_follower/autobots_object_follower.egg-info/top_level.txt
+[6.135s] reading manifest file '../../build/autobots_object_follower/autobots_object_follower.egg-info/SOURCES.txt'
+[6.140s] writing manifest file '../../build/autobots_object_follower/autobots_object_follower.egg-info/SOURCES.txt'
+[6.143s] running build
+[6.143s] running build_py
+[6.143s] copying autobots_object_follower/rotate_robot_node.py -> /home/burger/lab2_ws/build/autobots_object_follower/build/lib/autobots_object_follower
+[6.147s] running install
+[6.147s] /usr/local/lib/python3.10/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[6.148s] !!
+[6.148s] 
+[6.149s]         ********************************************************************************
+[6.149s]         Please avoid running ``setup.py`` directly.
+[6.150s]         Instead, use pypa/build, pypa/installer or other
+[6.150s]         standards-based tools.
+[6.150s] 
+[6.151s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[6.151s]         ********************************************************************************
+[6.151s] 
+[6.152s] !!
+[6.152s]   self.initialize_options()
+[6.178s] running install_lib
+[6.264s] copying /home/burger/lab2_ws/build/autobots_object_follower/build/lib/autobots_object_follower/rotate_robot_node.py -> /home/burger/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages/autobots_object_follower
+[6.267s] byte-compiling /home/burger/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages/autobots_object_follower/rotate_robot_node.py to rotate_robot_node.cpython-310.pyc
+[6.270s] running install_data
+[6.375s] running install_egg_info
+[6.452s] removing '/home/burger/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages/autobots_object_follower-0.0.0-py3.10.egg-info' (and everything under it)
+[6.456s] Copying ../../build/autobots_object_follower/autobots_object_follower.egg-info to /home/burger/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages/autobots_object_follower-0.0.0-py3.10.egg-info
+[6.464s] running install_scripts
+[7.203s] writing list of installed files to '/home/burger/lab2_ws/build/autobots_object_follower/install.log'
+[7.375s] Invoked command in '/home/burger/lab2_ws/src/autobots_object_follower' returned '0': PYTHONPATH=/home/burger/lab2_ws/build/autobots_object_follower/prefix_override:/home/burger/lab2_ws/install/autobots_object_follower/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/autobots_object_follower build --build-base /home/burger/lab2_ws/build/autobots_object_follower/build install --record /home/burger/lab2_ws/build/autobots_object_follower/install.log --single-version-externally-managed
