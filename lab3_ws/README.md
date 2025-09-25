@@ -1,3 +1,5 @@
+```mermaid
+
 graph TD
     subgraph "Lab 3 Compuational Diagram"
         Drivers((camera_robot.launch.py)) -->|"Topic: /image_raw/compressed <br> Type: CompressedImage"| B(detect_object);
@@ -12,3 +14,5 @@ graph TD
     end
 
     B -->|"Topic: /image_processed/compressed <br> Type: CompressedImage"| G;
+
+```
