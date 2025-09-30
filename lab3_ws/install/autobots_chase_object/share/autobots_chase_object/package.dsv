@@ -1,0 +1,6 @@
+source;share/autobots_chase_object/hook/pythonpath.ps1
+source;share/autobots_chase_object/hook/pythonpath.dsv
+source;share/autobots_chase_object/hook/pythonpath.sh
+source;share/autobots_chase_object/hook/ament_prefix_path.ps1
+source;share/autobots_chase_object/hook/ament_prefix_path.dsv
+source;share/autobots_chase_object/hook/ament_prefix_path.sh

@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: autobots-chase-object
+Version: 0.0.0
+Summary: A ROS 2 package to make a TurtleBot3 chase an object using camera and LIDAR data.
+Maintainer: burger
+Maintainer-email: burger@todo.todo
+License: Apache License 2.0

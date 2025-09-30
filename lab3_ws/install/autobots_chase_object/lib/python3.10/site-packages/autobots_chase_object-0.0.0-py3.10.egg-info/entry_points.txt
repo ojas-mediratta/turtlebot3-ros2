@@ -1,0 +1,4 @@
+[console_scripts]
+chase_object = autobots_chase_object.chase_object_node:main
+detect_object = autobots_chase_object.detect_object_node:main
+get_object_range = autobots_chase_object.get_object_range_node:main

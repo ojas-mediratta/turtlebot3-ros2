@@ -1,0 +1,130 @@
+[5.373s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[5.373s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffffbcbaa860>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffbcd01c00>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffbcd01c00>>)
+[5.806s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[5.806s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[5.807s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[5.807s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[5.807s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[5.807s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[5.807s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/burger/autobots/lab3_ws'
+[5.808s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[5.808s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[5.808s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[5.809s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[5.809s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[5.809s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[5.809s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[5.809s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[5.809s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[5.905s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[5.906s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[5.906s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[5.906s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[5.906s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[5.907s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[5.907s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[5.908s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[5.908s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[5.909s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[5.909s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[5.909s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[5.910s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[5.910s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[5.910s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[5.911s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[5.911s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[5.911s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[5.911s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[5.911s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[5.912s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[5.912s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[5.912s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[5.912s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[5.912s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[5.913s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[5.913s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[5.913s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[5.913s] Level 1:colcon.colcon_core.package_identification:_identify(src/autobots_chase_object) by extensions ['ignore', 'ignore_ament_install']
+[5.914s] Level 1:colcon.colcon_core.package_identification:_identify(src/autobots_chase_object) by extension 'ignore'
+[5.914s] Level 1:colcon.colcon_core.package_identification:_identify(src/autobots_chase_object) by extension 'ignore_ament_install'
+[5.914s] Level 1:colcon.colcon_core.package_identification:_identify(src/autobots_chase_object) by extensions ['colcon_pkg']
+[5.914s] Level 1:colcon.colcon_core.package_identification:_identify(src/autobots_chase_object) by extension 'colcon_pkg'
+[5.915s] Level 1:colcon.colcon_core.package_identification:_identify(src/autobots_chase_object) by extensions ['colcon_meta']
+[5.915s] Level 1:colcon.colcon_core.package_identification:_identify(src/autobots_chase_object) by extension 'colcon_meta'
+[5.915s] Level 1:colcon.colcon_core.package_identification:_identify(src/autobots_chase_object) by extensions ['ros']
+[5.915s] Level 1:colcon.colcon_core.package_identification:_identify(src/autobots_chase_object) by extension 'ros'
+[5.940s] DEBUG:colcon.colcon_core.package_identification:Package 'src/autobots_chase_object' with type 'ros.ament_python' and name 'autobots_chase_object'
+[5.941s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[5.941s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[5.941s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[5.941s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[5.941s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[6.406s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[6.406s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[6.543s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/burger/autobots/lab3_ws/install
+[6.617s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 8 installed packages in /home/burger/dontTouch_ws/install
+[6.683s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 207 installed packages in /opt/ros/humble
+[6.689s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[7.163s] Level 5:colcon.colcon_core.verb:set package 'autobots_chase_object' build argument 'cmake_args' from command line to 'None'
+[7.164s] Level 5:colcon.colcon_core.verb:set package 'autobots_chase_object' build argument 'cmake_target' from command line to 'None'
+[7.164s] Level 5:colcon.colcon_core.verb:set package 'autobots_chase_object' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[7.164s] Level 5:colcon.colcon_core.verb:set package 'autobots_chase_object' build argument 'cmake_clean_cache' from command line to 'False'
+[7.164s] Level 5:colcon.colcon_core.verb:set package 'autobots_chase_object' build argument 'cmake_clean_first' from command line to 'False'
+[7.164s] Level 5:colcon.colcon_core.verb:set package 'autobots_chase_object' build argument 'cmake_force_configure' from command line to 'False'
+[7.164s] Level 5:colcon.colcon_core.verb:set package 'autobots_chase_object' build argument 'ament_cmake_args' from command line to 'None'
+[7.164s] Level 5:colcon.colcon_core.verb:set package 'autobots_chase_object' build argument 'catkin_cmake_args' from command line to 'None'
+[7.164s] Level 5:colcon.colcon_core.verb:set package 'autobots_chase_object' build argument 'catkin_skip_building_tests' from command line to 'False'
+[7.165s] DEBUG:colcon.colcon_core.verb:Building package 'autobots_chase_object' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/burger/autobots/lab3_ws/build/autobots_chase_object', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/burger/autobots/lab3_ws/install/autobots_chase_object', 'merge_install': False, 'path': '/home/burger/autobots/lab3_ws/src/autobots_chase_object', 'symlink_install': False, 'test_result_base': None}
+[7.217s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[7.273s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[7.274s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/burger/autobots/lab3_ws/src/autobots_chase_object' with build type 'ament_python'
+[7.275s] Level 1:colcon.colcon_core.shell:create_environment_hook('autobots_chase_object', 'ament_prefix_path')
+[7.361s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[7.362s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/burger/autobots/lab3_ws/install/autobots_chase_object/share/autobots_chase_object/hook/ament_prefix_path.ps1'
+[7.370s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/burger/autobots/lab3_ws/install/autobots_chase_object/share/autobots_chase_object/hook/ament_prefix_path.dsv'
+[7.376s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/burger/autobots/lab3_ws/install/autobots_chase_object/share/autobots_chase_object/hook/ament_prefix_path.sh'
+[7.448s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[7.448s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[8.569s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/burger/autobots/lab3_ws/src/autobots_chase_object'
+[8.630s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[8.630s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[11.790s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/burger/autobots/lab3_ws/src/autobots_chase_object': PYTHONPATH=/home/burger/autobots/lab3_ws/build/autobots_chase_object/prefix_override:/home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/autobots_chase_object build --build-base /home/burger/autobots/lab3_ws/build/autobots_chase_object/build install --record /home/burger/autobots/lab3_ws/build/autobots_chase_object/install.log --single-version-externally-managed
+[13.917s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/burger/autobots/lab3_ws/src/autobots_chase_object' returned '0': PYTHONPATH=/home/burger/autobots/lab3_ws/build/autobots_chase_object/prefix_override:/home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/autobots_chase_object build --build-base /home/burger/autobots/lab3_ws/build/autobots_chase_object/build install --record /home/burger/autobots/lab3_ws/build/autobots_chase_object/install.log --single-version-externally-managed
+[14.007s] Level 1:colcon.colcon_core.environment:checking '/home/burger/autobots/lab3_ws/install/autobots_chase_object' for CMake module files
+[14.011s] Level 1:colcon.colcon_core.environment:checking '/home/burger/autobots/lab3_ws/install/autobots_chase_object' for CMake config files
+[14.018s] Level 1:colcon.colcon_core.environment:checking '/home/burger/autobots/lab3_ws/install/autobots_chase_object/lib'
+[14.019s] Level 1:colcon.colcon_core.environment:checking '/home/burger/autobots/lab3_ws/install/autobots_chase_object/bin'
+[14.020s] Level 1:colcon.colcon_core.environment:checking '/home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/pkgconfig/autobots_chase_object.pc'
+[14.021s] Level 1:colcon.colcon_core.environment:checking '/home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages'
+[14.022s] Level 1:colcon.colcon_core.shell:create_environment_hook('autobots_chase_object', 'pythonpath')
+[14.079s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/burger/autobots/lab3_ws/install/autobots_chase_object/share/autobots_chase_object/hook/pythonpath.ps1'
+[14.081s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/burger/autobots/lab3_ws/install/autobots_chase_object/share/autobots_chase_object/hook/pythonpath.dsv'
+[14.083s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/burger/autobots/lab3_ws/install/autobots_chase_object/share/autobots_chase_object/hook/pythonpath.sh'
+[14.085s] Level 1:colcon.colcon_core.environment:checking '/home/burger/autobots/lab3_ws/install/autobots_chase_object/bin'
+[14.086s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(autobots_chase_object)
+[14.146s] INFO:colcon.colcon_core.shell:Creating package script '/home/burger/autobots/lab3_ws/install/autobots_chase_object/share/autobots_chase_object/package.ps1'
+[14.151s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/burger/autobots/lab3_ws/install/autobots_chase_object/share/autobots_chase_object/package.dsv'
+[14.157s] INFO:colcon.colcon_core.shell:Creating package script '/home/burger/autobots/lab3_ws/install/autobots_chase_object/share/autobots_chase_object/package.sh'
+[14.164s] INFO:colcon.colcon_core.shell:Creating package script '/home/burger/autobots/lab3_ws/install/autobots_chase_object/share/autobots_chase_object/package.bash'
+[14.172s] INFO:colcon.colcon_core.shell:Creating package script '/home/burger/autobots/lab3_ws/install/autobots_chase_object/share/autobots_chase_object/package.zsh'
+[14.180s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/burger/autobots/lab3_ws/install/autobots_chase_object/share/colcon-core/packages/autobots_chase_object)
+[14.182s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[14.183s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[14.184s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[14.184s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[14.307s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[14.308s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[14.308s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[14.309s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[14.316s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[14.316s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[14.379s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/burger/autobots/lab3_ws/install/local_setup.ps1'
+[14.383s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/burger/autobots/lab3_ws/install/_local_setup_util_ps1.py'
+[14.392s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/burger/autobots/lab3_ws/install/setup.ps1'
+[14.458s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/burger/autobots/lab3_ws/install/local_setup.sh'
+[14.463s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/burger/autobots/lab3_ws/install/_local_setup_util_sh.py'
+[14.466s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/burger/autobots/lab3_ws/install/setup.sh'
+[14.529s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/burger/autobots/lab3_ws/install/local_setup.bash'
+[14.535s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/burger/autobots/lab3_ws/install/setup.bash'
+[14.603s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/burger/autobots/lab3_ws/install/local_setup.zsh'
+[14.608s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/burger/autobots/lab3_ws/install/setup.zsh'
