@@ -1,0 +1,143 @@
+[0.000000] (-) TimerEvent: {}
+[0.002177] (autobots_chase_object) JobQueued: {'identifier': 'autobots_chase_object', 'dependencies': OrderedDict()}
+[0.003031] (autobots_chase_object) JobStarted: {'identifier': 'autobots_chase_object'}
+[0.098816] (-) TimerEvent: {}
+[0.199762] (-) TimerEvent: {}
+[0.301727] (-) TimerEvent: {}
+[0.410831] (-) TimerEvent: {}
+[0.511733] (-) TimerEvent: {}
+[0.613505] (-) TimerEvent: {}
+[0.715764] (-) TimerEvent: {}
+[0.817832] (-) TimerEvent: {}
+[0.918951] (-) TimerEvent: {}
+[1.021147] (-) TimerEvent: {}
+[1.122736] (-) TimerEvent: {}
+[1.224807] (-) TimerEvent: {}
+[1.326651] (-) TimerEvent: {}
+[1.427843] (-) TimerEvent: {}
+[1.529136] (-) TimerEvent: {}
+[1.629979] (-) TimerEvent: {}
+[1.731825] (-) TimerEvent: {}
+[1.834301] (-) TimerEvent: {}
+[1.938329] (-) TimerEvent: {}
+[2.039721] (-) TimerEvent: {}
+[2.142599] (-) TimerEvent: {}
+[2.247169] (-) TimerEvent: {}
+[2.349801] (-) TimerEvent: {}
+[2.451651] (-) TimerEvent: {}
+[2.554023] (-) TimerEvent: {}
+[2.656352] (-) TimerEvent: {}
+[2.757382] (-) TimerEvent: {}
+[2.859155] (-) TimerEvent: {}
+[2.960548] (-) TimerEvent: {}
+[3.061457] (-) TimerEvent: {}
+[3.162238] (-) TimerEvent: {}
+[3.263211] (-) TimerEvent: {}
+[3.364014] (-) TimerEvent: {}
+[3.465059] (-) TimerEvent: {}
+[3.565966] (-) TimerEvent: {}
+[3.666926] (-) TimerEvent: {}
+[3.768613] (-) TimerEvent: {}
+[3.870147] (-) TimerEvent: {}
+[3.971003] (-) TimerEvent: {}
+[4.071803] (-) TimerEvent: {}
+[4.173376] (-) TimerEvent: {}
+[4.275667] (-) TimerEvent: {}
+[4.378816] (-) TimerEvent: {}
+[4.479666] (-) TimerEvent: {}
+[4.580835] (-) TimerEvent: {}
+[4.681787] (-) TimerEvent: {}
+[4.782827] (-) TimerEvent: {}
+[4.884416] (-) TimerEvent: {}
+[4.985588] (-) TimerEvent: {}
+[5.086770] (-) TimerEvent: {}
+[5.188851] (-) TimerEvent: {}
+[5.289571] (-) TimerEvent: {}
+[5.391229] (-) TimerEvent: {}
+[5.492029] (-) TimerEvent: {}
+[5.592851] (-) TimerEvent: {}
+[5.693715] (-) TimerEvent: {}
+[5.794632] (-) TimerEvent: {}
+[5.895372] (-) TimerEvent: {}
+[5.996197] (-) TimerEvent: {}
+[6.097321] (-) TimerEvent: {}
+[6.198271] (-) TimerEvent: {}
+[6.299264] (-) TimerEvent: {}
+[6.400589] (-) TimerEvent: {}
+[6.501396] (-) TimerEvent: {}
+[6.602090] (-) TimerEvent: {}
+[6.702976] (-) TimerEvent: {}
+[6.804534] (-) TimerEvent: {}
+[6.861312] (autobots_chase_object) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/autobots_chase_object', 'build', '--build-base', '/home/burger/autobots/lab3_ws/build/autobots_chase_object/build', 'install', '--record', '/home/burger/autobots/lab3_ws/build/autobots_chase_object/install.log', '--single-version-externally-managed'], 'cwd': '/home/burger/autobots/lab3_ws/src/autobots_chase_object', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'burger', 'SSH_CLIENT': '192.168.0.101 55885 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/burger/.vscode-server/cli/servers/Stable-e3a5acfb517a443235981655413d566533107e92/server/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/burger/dontTouch_ws/install/v4l2_camera/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/burger/.vscode-server/cli/servers/Stable-e3a5acfb517a443235981655413d566533107e92/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/burger', 'OLDPWD': '/home/burger/.vscode-server', 'TERM_PROGRAM_VERSION': '1.104.2', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-4715596c-b8cd-4abe-a367-34ee5dd1d3be.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/burger/.vscode-server/cli/servers/Stable-e3a5acfb517a443235981655413d566533107e92/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/burger/.vscode-server/cli/servers/Stable-e3a5acfb517a443235981655413d566533107e92/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/certs/ca-certificates.crt', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/burger/autobots/lab3_ws/install:/home/burger/dontTouch_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'burger', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '5', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/burger/.vscode-server/cli/servers/Stable-e3a5acfb517a443235981655413d566533107e92/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-c849188abb.sock', 'TERM_PROGRAM': 'vscode', 'ROS_DOMAIN_ID': '56', 'AMENT_PREFIX_PATH': '/home/burger/autobots/lab3_ws/install/autobots_chase_object:/home/burger/dontTouch_ws/install/v4l2_camera:/home/burger/dontTouch_ws/install/turtlebot3:/home/burger/dontTouch_ws/install/turtlebot3_teleop:/home/burger/dontTouch_ws/install/turtlebot3_bringup:/home/burger/dontTouch_ws/install/turtlebot3_node:/home/burger/dontTouch_ws/install/turtlebot3_example:/home/burger/dontTouch_ws/install/turtlebot3_description:/home/burger/dontTouch_ws/install/ld08_driver:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/burger/autobots/lab3_ws/build/autobots_chase_object', 'TURTLEBOT3_MODEL': 'burger', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.0.101 55885 192.168.0.70 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'LDS_MODEL': 'LDS-02', 'PYTHONPATH': '/home/burger/autobots/lab3_ws/build/autobots_chase_object/prefix_override:/home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages:/home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages:/home/burger/dontTouch_ws/build/turtlebot3_teleop:/home/burger/dontTouch_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/home/burger/dontTouch_ws/build/turtlebot3_example:/home/burger/dontTouch_ws/install/turtlebot3_example/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/burger/dontTouch_ws/install/v4l2_camera:/home/burger/dontTouch_ws/install/turtlebot3:/home/burger/dontTouch_ws/install/turtlebot3_bringup:/home/burger/dontTouch_ws/install/turtlebot3_node:/home/burger/dontTouch_ws/install/turtlebot3_description:/home/burger/dontTouch_ws/install/ld08_driver'}, 'shell': False}
+[6.904675] (-) TimerEvent: {}
+[7.006968] (-) TimerEvent: {}
+[7.109723] (-) TimerEvent: {}
+[7.210938] (-) TimerEvent: {}
+[7.311789] (-) TimerEvent: {}
+[7.412786] (-) TimerEvent: {}
+[7.514146] (-) TimerEvent: {}
+[7.615161] (-) TimerEvent: {}
+[7.716415] (-) TimerEvent: {}
+[7.817764] (-) TimerEvent: {}
+[7.919392] (-) TimerEvent: {}
+[8.020109] (-) TimerEvent: {}
+[8.079503] (autobots_chase_object) StdoutLine: {'line': b'running egg_info\n'}
+[8.120320] (-) TimerEvent: {}
+[8.150024] (autobots_chase_object) StdoutLine: {'line': b'writing ../../build/autobots_chase_object/autobots_chase_object.egg-info/PKG-INFO\n'}
+[8.158550] (autobots_chase_object) StdoutLine: {'line': b'writing dependency_links to ../../build/autobots_chase_object/autobots_chase_object.egg-info/dependency_links.txt\n'}
+[8.160223] (autobots_chase_object) StdoutLine: {'line': b'writing entry points to ../../build/autobots_chase_object/autobots_chase_object.egg-info/entry_points.txt\n'}
+[8.164302] (autobots_chase_object) StdoutLine: {'line': b'writing requirements to ../../build/autobots_chase_object/autobots_chase_object.egg-info/requires.txt\n'}
+[8.166796] (autobots_chase_object) StdoutLine: {'line': b'writing top-level names to ../../build/autobots_chase_object/autobots_chase_object.egg-info/top_level.txt\n'}
+[8.220613] (-) TimerEvent: {}
+[8.321673] (-) TimerEvent: {}
+[8.331319] (autobots_chase_object) StdoutLine: {'line': b"reading manifest file '../../build/autobots_chase_object/autobots_chase_object.egg-info/SOURCES.txt'\n"}
+[8.339965] (autobots_chase_object) StdoutLine: {'line': b"writing manifest file '../../build/autobots_chase_object/autobots_chase_object.egg-info/SOURCES.txt'\n"}
+[8.341669] (autobots_chase_object) StdoutLine: {'line': b'running build\n'}
+[8.342901] (autobots_chase_object) StdoutLine: {'line': b'running build_py\n'}
+[8.349538] (autobots_chase_object) StdoutLine: {'line': b'copying autobots_chase_object/constants.py -> /home/burger/autobots/lab3_ws/build/autobots_chase_object/build/lib/autobots_chase_object\n'}
+[8.352663] (autobots_chase_object) StdoutLine: {'line': b'running install\n'}
+[8.356898] (autobots_chase_object) StderrLine: {'line': b'/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.\n'}
+[8.357644] (autobots_chase_object) StderrLine: {'line': b'!!\n'}
+[8.358039] (autobots_chase_object) StderrLine: {'line': b'\n'}
+[8.358475] (autobots_chase_object) StderrLine: {'line': b'        ********************************************************************************\n'}
+[8.358952] (autobots_chase_object) StderrLine: {'line': b'        Please avoid running ``setup.py`` directly.\n'}
+[8.359463] (autobots_chase_object) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[8.359996] (autobots_chase_object) StderrLine: {'line': b'        standards-based tools.\n'}
+[8.360741] (autobots_chase_object) StderrLine: {'line': b'\n'}
+[8.361783] (autobots_chase_object) StderrLine: {'line': b'        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.\n'}
+[8.362292] (autobots_chase_object) StderrLine: {'line': b'        ********************************************************************************\n'}
+[8.362715] (autobots_chase_object) StderrLine: {'line': b'\n'}
+[8.363194] (autobots_chase_object) StderrLine: {'line': b'!!\n'}
+[8.363629] (autobots_chase_object) StderrLine: {'line': b'  self.initialize_options()\n'}
+[8.383503] (autobots_chase_object) StdoutLine: {'line': b'running install_lib\n'}
+[8.422080] (-) TimerEvent: {}
+[8.464766] (autobots_chase_object) StdoutLine: {'line': b'copying /home/burger/autobots/lab3_ws/build/autobots_chase_object/build/lib/autobots_chase_object/constants.py -> /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object\n'}
+[8.470722] (autobots_chase_object) StdoutLine: {'line': b'byte-compiling /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object/constants.py to constants.cpython-310.pyc\n'}
+[8.474138] (autobots_chase_object) StdoutLine: {'line': b'running install_data\n'}
+[8.522248] (-) TimerEvent: {}
+[8.562457] (autobots_chase_object) StdoutLine: {'line': b'running install_egg_info\n'}
+[8.622382] (-) TimerEvent: {}
+[8.646499] (autobots_chase_object) StdoutLine: {'line': b"removing '/home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[8.649781] (autobots_chase_object) StdoutLine: {'line': b'Copying ../../build/autobots_chase_object/autobots_chase_object.egg-info to /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object-0.0.0-py3.10.egg-info\n'}
+[8.659227] (autobots_chase_object) StdoutLine: {'line': b'running install_scripts\n'}
+[8.722604] (-) TimerEvent: {}
+[8.823483] (-) TimerEvent: {}
+[8.924226] (-) TimerEvent: {}
+[9.025093] (-) TimerEvent: {}
+[9.126355] (-) TimerEvent: {}
+[9.227537] (-) TimerEvent: {}
+[9.328431] (-) TimerEvent: {}
+[9.429846] (-) TimerEvent: {}
+[9.521874] (autobots_chase_object) StdoutLine: {'line': b'Installing chase_object script to /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/autobots_chase_object\n'}
+[9.523578] (autobots_chase_object) StdoutLine: {'line': b'Installing detect_object script to /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/autobots_chase_object\n'}
+[9.524715] (autobots_chase_object) StdoutLine: {'line': b'Installing get_object_range script to /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/autobots_chase_object\n'}
+[9.526791] (autobots_chase_object) StdoutLine: {'line': b"writing list of installed files to '/home/burger/autobots/lab3_ws/build/autobots_chase_object/install.log'\n"}
+[9.530133] (-) TimerEvent: {}
+[9.631634] (-) TimerEvent: {}
+[9.698956] (autobots_chase_object) CommandEnded: {'returncode': 0}
+[9.732106] (-) TimerEvent: {}
+[9.833664] (-) TimerEvent: {}
+[9.934899] (-) TimerEvent: {}
+[10.037641] (-) TimerEvent: {}
+[10.094335] (autobots_chase_object) JobEnded: {'identifier': 'autobots_chase_object', 'rc': 0}
+[10.099376] (-) EventReactorShutdown: {}

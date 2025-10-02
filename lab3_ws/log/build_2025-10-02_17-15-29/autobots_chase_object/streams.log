@@ -1,0 +1,54 @@
+[5.936s] Invoking command in '/home/burger/autobots/lab3_ws/src/autobots_chase_object': PYTHONPATH=/home/burger/autobots/lab3_ws/build/autobots_chase_object/prefix_override:/home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/autobots_chase_object build --build-base /home/burger/autobots/lab3_ws/build/autobots_chase_object/build install --record /home/burger/autobots/lab3_ws/build/autobots_chase_object/install.log --single-version-externally-managed
+[6.822s] running egg_info
+[6.876s] writing ../../build/autobots_chase_object/autobots_chase_object.egg-info/PKG-INFO
+[6.878s] writing dependency_links to ../../build/autobots_chase_object/autobots_chase_object.egg-info/dependency_links.txt
+[6.879s] writing entry points to ../../build/autobots_chase_object/autobots_chase_object.egg-info/entry_points.txt
+[6.880s] writing requirements to ../../build/autobots_chase_object/autobots_chase_object.egg-info/requires.txt
+[6.881s] writing top-level names to ../../build/autobots_chase_object/autobots_chase_object.egg-info/top_level.txt
+[6.997s] reading manifest file '../../build/autobots_chase_object/autobots_chase_object.egg-info/SOURCES.txt'
+[7.002s] writing manifest file '../../build/autobots_chase_object/autobots_chase_object.egg-info/SOURCES.txt'
+[7.003s] running build
+[7.003s] running build_py
+[7.004s] copying autobots_chase_object/constants.py -> /home/burger/autobots/lab3_ws/build/autobots_chase_object/build/lib/autobots_chase_object
+[7.005s] copying autobots_chase_object/detect_object_node.py -> /home/burger/autobots/lab3_ws/build/autobots_chase_object/build/lib/autobots_chase_object
+[7.007s] copying autobots_chase_object/get_object_range_node.py -> /home/burger/autobots/lab3_ws/build/autobots_chase_object/build/lib/autobots_chase_object
+[7.008s] copying autobots_chase_object/__init__.py -> /home/burger/autobots/lab3_ws/build/autobots_chase_object/build/lib/autobots_chase_object
+[7.009s] copying autobots_chase_object/chase_object_node.py -> /home/burger/autobots/lab3_ws/build/autobots_chase_object/build/lib/autobots_chase_object
+[7.010s] running install
+[7.013s] /usr/local/lib/python3.10/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[7.014s] !!
+[7.014s] 
+[7.015s]         ********************************************************************************
+[7.015s]         Please avoid running ``setup.py`` directly.
+[7.015s]         Instead, use pypa/build, pypa/installer or other
+[7.016s]         standards-based tools.
+[7.016s] 
+[7.016s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[7.017s]         ********************************************************************************
+[7.017s] 
+[7.017s] !!
+[7.018s]   self.initialize_options()
+[7.036s] running install_lib
+[7.092s] copying /home/burger/autobots/lab3_ws/build/autobots_chase_object/build/lib/autobots_chase_object/constants.py -> /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object
+[7.093s] copying /home/burger/autobots/lab3_ws/build/autobots_chase_object/build/lib/autobots_chase_object/detect_object_node.py -> /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object
+[7.094s] copying /home/burger/autobots/lab3_ws/build/autobots_chase_object/build/lib/autobots_chase_object/get_object_range_node.py -> /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object
+[7.095s] copying /home/burger/autobots/lab3_ws/build/autobots_chase_object/build/lib/autobots_chase_object/__init__.py -> /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object
+[7.096s] copying /home/burger/autobots/lab3_ws/build/autobots_chase_object/build/lib/autobots_chase_object/chase_object_node.py -> /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object
+[7.099s] byte-compiling /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object/constants.py to constants.cpython-310.pyc
+[7.101s] byte-compiling /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object/detect_object_node.py to detect_object_node.cpython-310.pyc
+[7.106s] byte-compiling /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object/get_object_range_node.py to get_object_range_node.cpython-310.pyc
+[7.110s] byte-compiling /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object/__init__.py to __init__.cpython-310.pyc
+[7.112s] byte-compiling /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object/chase_object_node.py to chase_object_node.cpython-310.pyc
+[7.116s] running install_data
+[7.173s] copying resource/autobots_chase_object -> /home/burger/autobots/lab3_ws/install/autobots_chase_object/share/ament_index/resource_index/packages
+[7.174s] copying package.xml -> /home/burger/autobots/lab3_ws/install/autobots_chase_object/share/autobots_chase_object
+[7.176s] copying launch/lab3_master.launch.py -> /home/burger/autobots/lab3_ws/install/autobots_chase_object/share/autobots_chase_object/launch
+[7.176s] running install_egg_info
+[7.235s] removing '/home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object-0.0.0-py3.10.egg-info' (and everything under it)
+[7.236s] Copying ../../build/autobots_chase_object/autobots_chase_object.egg-info to /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages/autobots_chase_object-0.0.0-py3.10.egg-info
+[7.242s] running install_scripts
+[7.825s] Installing chase_object script to /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/autobots_chase_object
+[7.826s] Installing detect_object script to /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/autobots_chase_object
+[7.827s] Installing get_object_range script to /home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/autobots_chase_object
+[7.829s] writing list of installed files to '/home/burger/autobots/lab3_ws/build/autobots_chase_object/install.log'
+[7.957s] Invoked command in '/home/burger/autobots/lab3_ws/src/autobots_chase_object' returned '0': PYTHONPATH=/home/burger/autobots/lab3_ws/build/autobots_chase_object/prefix_override:/home/burger/autobots/lab3_ws/install/autobots_chase_object/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/autobots_chase_object build --build-base /home/burger/autobots/lab3_ws/build/autobots_chase_object/build install --record /home/burger/autobots/lab3_ws/build/autobots_chase_object/install.log --single-version-externally-managed
