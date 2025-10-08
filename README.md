@@ -8,7 +8,7 @@ It is intended as a personal record and reference, **not** a solutions repositor
 ## 🛠️ Tech & Tools
 
 - **Languages**: Python, C++
-- **Frameworks / Libraries**: ROS 2 Humble (or compatible), OpenCV, PyTorch / TensorFlow
+- **Frameworks / Libraries**: ROS 2 Humble (or compatible), OpenCV, PyTorch / TensorFlow  
 - **Platforms / Simulators**: TurtleBot3 (real or simulated), Gazebo, RQT / RViz
 
 ---
@@ -25,53 +25,53 @@ It is intended as a personal record and reference, **not** a solutions repositor
 
 - `lab2_ws/` — ROS2 workspace and code for Lab 2 experiments  
 - `lab3_ws/` — ROS2 workspace and code for Lab 3  
+- `lab4_ws/` — ROS2 workspace and code for Lab 4  
 - `README.md` — this file  
 
 ---
 
-### Lab 2 – Perception & Object Tracking (`lab2_ws`)
+<details>
+<summary><b>Lab 2 – Perception & Object Tracking (`lab2_ws`)</b></summary>
 
-**Purpose**: set up a ROS2 perception pipeline to detect and track a colored object, publish detection outputs, and link to simple robot motion.
+**Purpose**: Set up a ROS2 perception pipeline to detect and track a colored object, publish detection outputs, and link to simple robot motion.
 
-**Key files and modules**:
+**Key files and modules:**
+- `find_object.py` — Subscribes to an image topic, applies HSV thresholding and contour detection, and publishes both processed images and object coordinates.  
+- `rotate_robot.py` — Publishes `Twist` commands to `/cmd_vel` to rotate the robot for verification.  
+- Launch/config files — Bring up camera, perception, and control nodes with adjustable thresholds.
 
-- `find_object.py`  
-  A ROS2 node (in Python) that subscribes to an image topic (camera), applies computer vision processing (e.g. HSV thresholding, morphological filtering, contour detection), identifies the object, and publishes:
-  1. The processed image annotated with detection overlays  
-  2. The pixel coordinates or centroid of the object  
-
-- `rotate_robot.py`  
-  A ROS2 control node that publishes `Twist` messages (to `/cmd_vel`) to rotate the robot (or simulated robot). Useful for verifying actuation and that your perception outputs can drive motion.
-
-- Launch / config files  
-  These set up the ROS2 node graph: launching the camera (or image source), `find_object.py`, `rotate_robot.py`, remappings, parameter settings for thresholds, etc.
+</details>
 
 ---
 
-### Lab 3 – Sensor Fusion, PID Control & Object Chasing (`lab3_ws`)
+<details>
+<summary><b>Lab 3 – Sensor Fusion, PID Control & Object Chasing (`lab3_ws`)</b></summary>
 
-**Purpose**: fuse vision and LIDAR (or range sensor) data to chase a target object robustly via control.
+**Purpose**: Combine camera and LIDAR sensing for a closed-loop control system that chases a detected object.  
 
-**Key files and modules**:
+**Key files and modules:**
+- **Vision / Detection Node** — Extracts the angular bearing of a tracked object.  
+- **Range / Scan Node** — Processes `/scan` data to determine object distance.  
+- **Chasing Controller** — Implements cascaded PIDs for angular and distance control, publishing `Twist` messages to `/cmd_vel`.  
+- Launch/config files — Integrate all nodes with tuned parameters for stability and response.
 
-- **Vision / Detection Module**  
-  A node (perhaps still named `detect_object.py` or similar) that processes camera input to extract angular direction / bearing (in image coordinates or field of view angle) of the target object.
+</details>
 
-- **Range / Scan Fusion Module**  
-  A node that subscribes to ROS2 `LaserScan` (e.g. `/scan`) and fuses that with the vision bearing to estimate distance to the target. This might involve filtering out spurious scans or selecting a nearest range in the approximate bearing direction.
+---
 
-- **Control / Chasing Node**  
-  A ROS2 node implementing two PID controllers:
-  1. **Angular / rotational PID** — to steer the robot so that its heading aligns with the target object  
-  2. **Linear / translational PID** — to drive forward or backward to maintain a desired distance  
+<details>
+<summary><b>Lab 4 – Go-to-Goal with Obstacle Avoidance (`lab4_ws`)</b></summary>
 
-  This node publishes `Twist` messages to `/cmd_vel` to drive the robot toward (or maintain) the object.
+**Purpose**: Develop autonomous navigation behaviors using odometry and LIDAR data to reach a goal position while avoiding obstacles.
 
-- Launch / integration files  
-  Launch scripts or `.py/.xml` files to bring up the full sensing + control pipeline, parameter definitions (PID gains, setpoints, thresholds), remappings, and simulation integration (e.g. in Gazebo with TurtleBot3).
+**Key files and modules:**
+- `get_object_range.py` — Subscribes to `/scan`, detects nearby obstacles, and publishes a vector to the closest object as `/obstacle_vector` (`geometry_msgs/Vector3`).  
+- `go_to_goal.py` — Subscribes to `/odom` and `/obstacle_vector`, computes velocity commands for goal-directed navigation with reactive obstacle avoidance, and publishes `/cmd_vel` (`geometry_msgs/Twist`).  
+- `turtlebot3_bringup.launch.py` — Initializes onboard drivers and sensors, including `/scan` and `/odom` publishers.  
+- Launch configuration — Integrates all nodes into a single pipeline for autonomous navigation.  
+- See the `lab4_ws/README.md` for the full computational diagram.
 
-- Supporting config & documentation  
-  Config files (YAML or `.ini`) for PID gains, safe bounds, sensor fusion weights, and possibly a write-up or doc files explaining design choices, stability considerations, disturbances, and limitations.
+</details>
 
 ---
 
