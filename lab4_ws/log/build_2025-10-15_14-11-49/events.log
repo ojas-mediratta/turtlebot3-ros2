@@ -1,0 +1,162 @@
+[0.000000] (-) TimerEvent: {}
+[0.018067] (autobots_navigate_to_goal) JobQueued: {'identifier': 'autobots_navigate_to_goal', 'dependencies': OrderedDict()}
+[0.018741] (autobots_navigate_to_goal) JobStarted: {'identifier': 'autobots_navigate_to_goal'}
+[0.098518] (-) TimerEvent: {}
+[0.203029] (-) TimerEvent: {}
+[0.303816] (-) TimerEvent: {}
+[0.407495] (-) TimerEvent: {}
+[0.510235] (-) TimerEvent: {}
+[0.612415] (-) TimerEvent: {}
+[0.717297] (-) TimerEvent: {}
+[0.818083] (-) TimerEvent: {}
+[0.918982] (-) TimerEvent: {}
+[1.020701] (-) TimerEvent: {}
+[1.121589] (-) TimerEvent: {}
+[1.222515] (-) TimerEvent: {}
+[1.323210] (-) TimerEvent: {}
+[1.424143] (-) TimerEvent: {}
+[1.525470] (-) TimerEvent: {}
+[1.626290] (-) TimerEvent: {}
+[1.727128] (-) TimerEvent: {}
+[1.829203] (-) TimerEvent: {}
+[1.930199] (-) TimerEvent: {}
+[2.032736] (-) TimerEvent: {}
+[2.135928] (-) TimerEvent: {}
+[2.238603] (-) TimerEvent: {}
+[2.340205] (-) TimerEvent: {}
+[2.441537] (-) TimerEvent: {}
+[2.543273] (-) TimerEvent: {}
+[2.643999] (-) TimerEvent: {}
+[2.744822] (-) TimerEvent: {}
+[2.846757] (-) TimerEvent: {}
+[2.947746] (-) TimerEvent: {}
+[3.048432] (-) TimerEvent: {}
+[3.149367] (-) TimerEvent: {}
+[3.250282] (-) TimerEvent: {}
+[3.351145] (-) TimerEvent: {}
+[3.451906] (-) TimerEvent: {}
+[3.552621] (-) TimerEvent: {}
+[3.653317] (-) TimerEvent: {}
+[3.754382] (-) TimerEvent: {}
+[3.855058] (-) TimerEvent: {}
+[3.955809] (-) TimerEvent: {}
+[4.056661] (-) TimerEvent: {}
+[4.158118] (-) TimerEvent: {}
+[4.259331] (-) TimerEvent: {}
+[4.360094] (-) TimerEvent: {}
+[4.460732] (-) TimerEvent: {}
+[4.561491] (-) TimerEvent: {}
+[4.662278] (-) TimerEvent: {}
+[4.763059] (-) TimerEvent: {}
+[4.863886] (-) TimerEvent: {}
+[4.964730] (-) TimerEvent: {}
+[5.065896] (-) TimerEvent: {}
+[5.166543] (-) TimerEvent: {}
+[5.267369] (-) TimerEvent: {}
+[5.368297] (-) TimerEvent: {}
+[5.468991] (-) TimerEvent: {}
+[5.569774] (-) TimerEvent: {}
+[5.670859] (-) TimerEvent: {}
+[5.771830] (-) TimerEvent: {}
+[5.872614] (-) TimerEvent: {}
+[5.973716] (-) TimerEvent: {}
+[6.080266] (-) TimerEvent: {}
+[6.182354] (-) TimerEvent: {}
+[6.246333] (autobots_navigate_to_goal) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--editable', '--build-directory', '/home/burger/autobots/lab4_ws/build/autobots_navigate_to_goal/build', '--no-deps', 'install_data'], 'cwd': '/home/burger/autobots/lab4_ws/build/autobots_navigate_to_goal', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'burger', 'SSH_CLIENT': '192.168.0.101 52995 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/burger/.vscode-server/cli/servers/Stable-03c265b1adee71ac88f833e065f7bb956b60550a/server/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/burger/dontTouch_ws/install/v4l2_camera/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/burger/.vscode-server/cli/servers/Stable-03c265b1adee71ac88f833e065f7bb956b60550a/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/burger', 'OLDPWD': '/home/burger/autobots', 'TERM_PROGRAM_VERSION': '1.105.0', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-f2ae056b-edb3-4892-86f1-4853131516c7.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/burger/.vscode-server/cli/servers/Stable-03c265b1adee71ac88f833e065f7bb956b60550a/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/burger/.vscode-server/cli/servers/Stable-03c265b1adee71ac88f833e065f7bb956b60550a/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/certs/ca-certificates.crt', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/burger/dontTouch_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'burger', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/burger/.vscode-server/cli/servers/Stable-03c265b1adee71ac88f833e065f7bb956b60550a/server/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/burger/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand', 'XDG_RUNTIME_DIR': '/run/user/1000', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-58c871789b.sock', 'TERM_PROGRAM': 'vscode', 'ROS_DOMAIN_ID': '56', 'AMENT_PREFIX_PATH': '/home/burger/dontTouch_ws/install/v4l2_camera:/home/burger/dontTouch_ws/install/turtlebot3:/home/burger/dontTouch_ws/install/turtlebot3_teleop:/home/burger/dontTouch_ws/install/turtlebot3_bringup:/home/burger/dontTouch_ws/install/turtlebot3_node:/home/burger/dontTouch_ws/install/turtlebot3_example:/home/burger/dontTouch_ws/install/turtlebot3_description:/home/burger/dontTouch_ws/install/ld08_driver:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'GIT_PAGER': 'cat', 'PWD': '/home/burger/autobots/lab4_ws/build/autobots_navigate_to_goal', 'TURTLEBOT3_MODEL': 'burger', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.0.101 52995 192.168.0.70 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'LDS_MODEL': 'LDS-02', 'PYTHONPATH': '/home/burger/autobots/lab4_ws/build/autobots_navigate_to_goal/prefix_override:/home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/lib/python3.10/site-packages:/home/burger/dontTouch_ws/build/turtlebot3_teleop:/home/burger/dontTouch_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/home/burger/dontTouch_ws/build/turtlebot3_example:/home/burger/dontTouch_ws/install/turtlebot3_example/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/burger/dontTouch_ws/install/v4l2_camera:/home/burger/dontTouch_ws/install/turtlebot3:/home/burger/dontTouch_ws/install/turtlebot3_bringup:/home/burger/dontTouch_ws/install/turtlebot3_node:/home/burger/dontTouch_ws/install/turtlebot3_description:/home/burger/dontTouch_ws/install/ld08_driver'}, 'shell': False}
+[6.282517] (-) TimerEvent: {}
+[6.383299] (-) TimerEvent: {}
+[6.484242] (-) TimerEvent: {}
+[6.585009] (-) TimerEvent: {}
+[6.685801] (-) TimerEvent: {}
+[6.786601] (-) TimerEvent: {}
+[6.887389] (-) TimerEvent: {}
+[6.988530] (-) TimerEvent: {}
+[7.089203] (-) TimerEvent: {}
+[7.190004] (-) TimerEvent: {}
+[7.290711] (-) TimerEvent: {}
+[7.391500] (-) TimerEvent: {}
+[7.492160] (-) TimerEvent: {}
+[7.592829] (-) TimerEvent: {}
+[7.693769] (-) TimerEvent: {}
+[7.794505] (-) TimerEvent: {}
+[7.895235] (-) TimerEvent: {}
+[7.996292] (-) TimerEvent: {}
+[8.098373] (-) TimerEvent: {}
+[8.135417] (autobots_navigate_to_goal) StdoutLine: {'line': b'running develop\n'}
+[8.146353] (autobots_navigate_to_goal) StderrLine: {'line': b'/usr/local/lib/python3.10/dist-packages/setuptools/command/develop.py:40: EasyInstallDeprecationWarning: easy_install command is deprecated.\n'}
+[8.147105] (autobots_navigate_to_goal) StderrLine: {'line': b'!!\n'}
+[8.147610] (autobots_navigate_to_goal) StderrLine: {'line': b'\n'}
+[8.148070] (autobots_navigate_to_goal) StderrLine: {'line': b'        ********************************************************************************\n'}
+[8.148585] (autobots_navigate_to_goal) StderrLine: {'line': b'        Please avoid running ``setup.py`` and ``easy_install``.\n'}
+[8.149154] (autobots_navigate_to_goal) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[8.149677] (autobots_navigate_to_goal) StderrLine: {'line': b'        standards-based tools.\n'}
+[8.150877] (autobots_navigate_to_goal) StderrLine: {'line': b'\n'}
+[8.151355] (autobots_navigate_to_goal) StderrLine: {'line': b'        See https://github.com/pypa/setuptools/issues/917 for details.\n'}
+[8.151814] (autobots_navigate_to_goal) StderrLine: {'line': b'        ********************************************************************************\n'}
+[8.152246] (autobots_navigate_to_goal) StderrLine: {'line': b'\n'}
+[8.152652] (autobots_navigate_to_goal) StderrLine: {'line': b'!!\n'}
+[8.153096] (autobots_navigate_to_goal) StderrLine: {'line': b'  easy_install.initialize_options(self)\n'}
+[8.198525] (-) TimerEvent: {}
+[8.299272] (-) TimerEvent: {}
+[8.318989] (autobots_navigate_to_goal) StderrLine: {'line': b'/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.\n'}
+[8.319785] (autobots_navigate_to_goal) StderrLine: {'line': b'!!\n'}
+[8.320578] (autobots_navigate_to_goal) StderrLine: {'line': b'\n'}
+[8.321276] (autobots_navigate_to_goal) StderrLine: {'line': b'        ********************************************************************************\n'}
+[8.322734] (autobots_navigate_to_goal) StderrLine: {'line': b'        Please avoid running ``setup.py`` directly.\n'}
+[8.323273] (autobots_navigate_to_goal) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[8.323733] (autobots_navigate_to_goal) StderrLine: {'line': b'        standards-based tools.\n'}
+[8.324252] (autobots_navigate_to_goal) StderrLine: {'line': b'\n'}
+[8.325545] (autobots_navigate_to_goal) StderrLine: {'line': b'        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.\n'}
+[8.326076] (autobots_navigate_to_goal) StderrLine: {'line': b'        ********************************************************************************\n'}
+[8.326471] (autobots_navigate_to_goal) StderrLine: {'line': b'\n'}
+[8.326867] (autobots_navigate_to_goal) StderrLine: {'line': b'!!\n'}
+[8.327275] (autobots_navigate_to_goal) StderrLine: {'line': b'  self.initialize_options()\n'}
+[8.399438] (-) TimerEvent: {}
+[8.500232] (-) TimerEvent: {}
+[8.601113] (-) TimerEvent: {}
+[8.702425] (-) TimerEvent: {}
+[8.803342] (-) TimerEvent: {}
+[8.906484] (-) TimerEvent: {}
+[9.008120] (-) TimerEvent: {}
+[9.110606] (-) TimerEvent: {}
+[9.211538] (-) TimerEvent: {}
+[9.329442] (-) TimerEvent: {}
+[9.430654] (-) TimerEvent: {}
+[9.466413] (autobots_navigate_to_goal) StdoutLine: {'line': b'running egg_info\n'}
+[9.467244] (autobots_navigate_to_goal) StdoutLine: {'line': b'creating autobots_navigate_to_goal.egg-info\n'}
+[9.530846] (-) TimerEvent: {}
+[9.556475] (autobots_navigate_to_goal) StdoutLine: {'line': b'writing autobots_navigate_to_goal.egg-info/PKG-INFO\n'}
+[9.559234] (autobots_navigate_to_goal) StdoutLine: {'line': b'writing dependency_links to autobots_navigate_to_goal.egg-info/dependency_links.txt\n'}
+[9.560400] (autobots_navigate_to_goal) StdoutLine: {'line': b'writing entry points to autobots_navigate_to_goal.egg-info/entry_points.txt\n'}
+[9.561415] (autobots_navigate_to_goal) StdoutLine: {'line': b'writing requirements to autobots_navigate_to_goal.egg-info/requires.txt\n'}
+[9.562601] (autobots_navigate_to_goal) StdoutLine: {'line': b'writing top-level names to autobots_navigate_to_goal.egg-info/top_level.txt\n'}
+[9.563962] (autobots_navigate_to_goal) StdoutLine: {'line': b"writing manifest file 'autobots_navigate_to_goal.egg-info/SOURCES.txt'\n"}
+[9.631038] (-) TimerEvent: {}
+[9.731751] (-) TimerEvent: {}
+[9.741111] (autobots_navigate_to_goal) StdoutLine: {'line': b"reading manifest file 'autobots_navigate_to_goal.egg-info/SOURCES.txt'\n"}
+[9.745005] (autobots_navigate_to_goal) StdoutLine: {'line': b"writing manifest file 'autobots_navigate_to_goal.egg-info/SOURCES.txt'\n"}
+[9.832064] (-) TimerEvent: {}
+[9.839346] (autobots_navigate_to_goal) StdoutLine: {'line': b'running build_ext\n'}
+[9.843059] (autobots_navigate_to_goal) StdoutLine: {'line': b'Creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/lib/python3.10/site-packages/autobots-navigate-to-goal.egg-link (link to .)\n'}
+[9.850682] (autobots_navigate_to_goal) StdoutLine: {'line': b'Installing get_object_range script to /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/lib/autobots_navigate_to_goal\n'}
+[9.853559] (autobots_navigate_to_goal) StdoutLine: {'line': b'Installing go_to_goal script to /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/lib/autobots_navigate_to_goal\n'}
+[9.855470] (autobots_navigate_to_goal) StdoutLine: {'line': b'\n'}
+[9.856078] (autobots_navigate_to_goal) StdoutLine: {'line': b'Installed /home/burger/autobots/lab4_ws/build/autobots_navigate_to_goal\n'}
+[9.856705] (autobots_navigate_to_goal) StdoutLine: {'line': b'running install_data\n'}
+[9.857348] (autobots_navigate_to_goal) StdoutLine: {'line': b'creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/ament_index\n'}
+[9.858143] (autobots_navigate_to_goal) StdoutLine: {'line': b'creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/ament_index/resource_index\n'}
+[9.858594] (autobots_navigate_to_goal) StdoutLine: {'line': b'creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/ament_index/resource_index/packages\n'}
+[9.859163] (autobots_navigate_to_goal) StdoutLine: {'line': b'copying resource/autobots_navigate_to_goal -> /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/ament_index/resource_index/packages\n'}
+[9.859816] (autobots_navigate_to_goal) StdoutLine: {'line': b'copying package.xml -> /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/autobots_navigate_to_goal\n'}
+[9.863819] (autobots_navigate_to_goal) StdoutLine: {'line': b'creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/autobots_navigate_to_goal/launch\n'}
+[9.864622] (autobots_navigate_to_goal) StdoutLine: {'line': b'copying launch/nav_lab4.launch.py -> /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/autobots_navigate_to_goal/launch\n'}
+[9.866209] (autobots_navigate_to_goal) StdoutLine: {'line': b'copying autobots_navigate_to_goal/wayPoints.txt -> /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/autobots_navigate_to_goal\n'}
+[9.932432] (-) TimerEvent: {}
+[10.033584] (-) TimerEvent: {}
+[10.063515] (autobots_navigate_to_goal) CommandEnded: {'returncode': 0}
+[10.133882] (-) TimerEvent: {}
+[10.238126] (-) TimerEvent: {}
+[10.339471] (-) TimerEvent: {}
+[10.441388] (-) TimerEvent: {}
+[10.493822] (autobots_navigate_to_goal) JobEnded: {'identifier': 'autobots_navigate_to_goal', 'rc': 0}
+[10.499480] (-) EventReactorShutdown: {}

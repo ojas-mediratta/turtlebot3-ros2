@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: autobots-navigate-to-goal
+Version: 0.0.0
+Summary: Lab 4: Autonomous waypoint navigation with obstacle avoidance for TurtleBot3
+Maintainer: burger
+Maintainer-email: omediratta3@gatech.edu
+License: Apache License 2.0

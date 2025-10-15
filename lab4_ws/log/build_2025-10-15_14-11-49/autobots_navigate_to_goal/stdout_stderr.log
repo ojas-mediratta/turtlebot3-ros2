@@ -1,0 +1,52 @@
+running develop
+/usr/local/lib/python3.10/dist-packages/setuptools/command/develop.py:40: EasyInstallDeprecationWarning: easy_install command is deprecated.
+!!
+
+        ********************************************************************************
+        Please avoid running ``setup.py`` and ``easy_install``.
+        Instead, use pypa/build, pypa/installer or other
+        standards-based tools.
+
+        See https://github.com/pypa/setuptools/issues/917 for details.
+        ********************************************************************************
+
+!!
+  easy_install.initialize_options(self)
+/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+!!
+
+        ********************************************************************************
+        Please avoid running ``setup.py`` directly.
+        Instead, use pypa/build, pypa/installer or other
+        standards-based tools.
+
+        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+        ********************************************************************************
+
+!!
+  self.initialize_options()
+running egg_info
+creating autobots_navigate_to_goal.egg-info
+writing autobots_navigate_to_goal.egg-info/PKG-INFO
+writing dependency_links to autobots_navigate_to_goal.egg-info/dependency_links.txt
+writing entry points to autobots_navigate_to_goal.egg-info/entry_points.txt
+writing requirements to autobots_navigate_to_goal.egg-info/requires.txt
+writing top-level names to autobots_navigate_to_goal.egg-info/top_level.txt
+writing manifest file 'autobots_navigate_to_goal.egg-info/SOURCES.txt'
+reading manifest file 'autobots_navigate_to_goal.egg-info/SOURCES.txt'
+writing manifest file 'autobots_navigate_to_goal.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/lib/python3.10/site-packages/autobots-navigate-to-goal.egg-link (link to .)
+Installing get_object_range script to /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/lib/autobots_navigate_to_goal
+Installing go_to_goal script to /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/lib/autobots_navigate_to_goal
+
+Installed /home/burger/autobots/lab4_ws/build/autobots_navigate_to_goal
+running install_data
+creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/ament_index
+creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/ament_index/resource_index
+creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/ament_index/resource_index/packages
+copying resource/autobots_navigate_to_goal -> /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/ament_index/resource_index/packages
+copying package.xml -> /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/autobots_navigate_to_goal
+creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/autobots_navigate_to_goal/launch
+copying launch/nav_lab4.launch.py -> /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/autobots_navigate_to_goal/launch
+copying autobots_navigate_to_goal/wayPoints.txt -> /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/autobots_navigate_to_goal

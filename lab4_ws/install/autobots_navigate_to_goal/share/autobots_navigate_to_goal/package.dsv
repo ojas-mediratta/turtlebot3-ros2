@@ -1,0 +1,9 @@
+source;share/autobots_navigate_to_goal/hook/pythonpath.ps1
+source;share/autobots_navigate_to_goal/hook/pythonpath.dsv
+source;share/autobots_navigate_to_goal/hook/pythonpath.sh
+source;share/autobots_navigate_to_goal/hook/ament_prefix_path.ps1
+source;share/autobots_navigate_to_goal/hook/ament_prefix_path.dsv
+source;share/autobots_navigate_to_goal/hook/ament_prefix_path.sh
+source;../../build/autobots_navigate_to_goal/share/autobots_navigate_to_goal/hook/pythonpath_develop.ps1
+source;../../build/autobots_navigate_to_goal/share/autobots_navigate_to_goal/hook/pythonpath_develop.dsv
+source;../../build/autobots_navigate_to_goal/share/autobots_navigate_to_goal/hook/pythonpath_develop.sh

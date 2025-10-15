@@ -1,0 +1,54 @@
+[6.229s] Invoking command in '/home/burger/autobots/lab4_ws/build/autobots_navigate_to_goal': PYTHONPATH=/home/burger/autobots/lab4_ws/build/autobots_navigate_to_goal/prefix_override:/home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/burger/autobots/lab4_ws/build/autobots_navigate_to_goal/build --no-deps install_data
+[8.117s] running develop
+[8.128s] /usr/local/lib/python3.10/dist-packages/setuptools/command/develop.py:40: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[8.128s] !!
+[8.129s] 
+[8.129s]         ********************************************************************************
+[8.130s]         Please avoid running ``setup.py`` and ``easy_install``.
+[8.130s]         Instead, use pypa/build, pypa/installer or other
+[8.132s]         standards-based tools.
+[8.132s] 
+[8.133s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[8.133s]         ********************************************************************************
+[8.134s] 
+[8.134s] !!
+[8.134s]   easy_install.initialize_options(self)
+[8.301s] /usr/local/lib/python3.10/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[8.301s] !!
+[8.302s] 
+[8.304s]         ********************************************************************************
+[8.304s]         Please avoid running ``setup.py`` directly.
+[8.305s]         Instead, use pypa/build, pypa/installer or other
+[8.305s]         standards-based tools.
+[8.306s] 
+[8.307s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[8.307s]         ********************************************************************************
+[8.308s] 
+[8.308s] !!
+[8.309s]   self.initialize_options()
+[9.448s] running egg_info
+[9.449s] creating autobots_navigate_to_goal.egg-info
+[9.539s] writing autobots_navigate_to_goal.egg-info/PKG-INFO
+[9.541s] writing dependency_links to autobots_navigate_to_goal.egg-info/dependency_links.txt
+[9.542s] writing entry points to autobots_navigate_to_goal.egg-info/entry_points.txt
+[9.543s] writing requirements to autobots_navigate_to_goal.egg-info/requires.txt
+[9.544s] writing top-level names to autobots_navigate_to_goal.egg-info/top_level.txt
+[9.545s] writing manifest file 'autobots_navigate_to_goal.egg-info/SOURCES.txt'
+[9.722s] reading manifest file 'autobots_navigate_to_goal.egg-info/SOURCES.txt'
+[9.726s] writing manifest file 'autobots_navigate_to_goal.egg-info/SOURCES.txt'
+[9.821s] running build_ext
+[9.825s] Creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/lib/python3.10/site-packages/autobots-navigate-to-goal.egg-link (link to .)
+[9.833s] Installing get_object_range script to /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/lib/autobots_navigate_to_goal
+[9.836s] Installing go_to_goal script to /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/lib/autobots_navigate_to_goal
+[9.837s] 
+[9.838s] Installed /home/burger/autobots/lab4_ws/build/autobots_navigate_to_goal
+[9.838s] running install_data
+[9.839s] creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/ament_index
+[9.839s] creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/ament_index/resource_index
+[9.840s] creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/ament_index/resource_index/packages
+[9.840s] copying resource/autobots_navigate_to_goal -> /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/ament_index/resource_index/packages
+[9.841s] copying package.xml -> /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/autobots_navigate_to_goal
+[9.845s] creating /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/autobots_navigate_to_goal/launch
+[9.846s] copying launch/nav_lab4.launch.py -> /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/autobots_navigate_to_goal/launch
+[9.848s] copying autobots_navigate_to_goal/wayPoints.txt -> /home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/share/autobots_navigate_to_goal
+[10.046s] Invoked command in '/home/burger/autobots/lab4_ws/build/autobots_navigate_to_goal' returned '0': PYTHONPATH=/home/burger/autobots/lab4_ws/build/autobots_navigate_to_goal/prefix_override:/home/burger/autobots/lab4_ws/install/autobots_navigate_to_goal/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/burger/autobots/lab4_ws/build/autobots_navigate_to_goal/build --no-deps install_data
