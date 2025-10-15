@@ -19,22 +19,28 @@ class GoToGoal(Node):
         
         # ===== TUNABLE PARAMETERS =====
         # Control gains
-        self.k_lin = 0.6           # linear gain for attractive force
+        self.k_lin = 0.85           # linear gain for attractive force
         self.k_ang = 2.2           # angular gain for heading correction
         self.k_rep = 1.3           # repulsive force weight (higher = stronger avoidance)
-        self.rep_cutoff = 0.7      # distance threshold for repulsion (m)
+        self.rep_cutoff = 0.75      # distance threshold for repulsion (m)
         
-        # Approach behavior (NEW: slow down near goal for precision)
-        self.approach_slowdown_radius = 0.30   # start slowing when within 30cm
-        self.min_approach_speed = 0.05         # minimum speed when very close
+        # Approach behavior 
+        self.approach_slowdown_radius = 0.25   # start slowing when within 25cm
+        self.min_approach_speed = 0.075         # minimum speed when very close
+        
+        # Anti-oscillation parameters 
+        self.angular_damping_near_obstacle = 0.3  # reduce angular gain when obstacle close
+        self.obstacle_proximity_threshold = 0.5   # consider obstacle "close" at this distance
+        self.min_forward_progress = 0.10          # minimum linear velocity to maintain forward motion
+        self.angular_smoothing_alpha = 0.2        # low-pass filter for angular velocity (0-1)
         
         # Speed limits (LAB REQUIREMENTS - DO NOT EXCEED)
         self.max_v = 0.20          # m/s (lab hard limit)
         self.max_w = 1.50          # rad/s (lab hard limit)
         
         # Goal tolerances per waypoint index: [10cm, 15cm, 20cm]
-        self.goal_radii = [0.10, 0.15, 0.20]
-        self.dwell_time_sec = 10.0 # hold at waypoint for 10 seconds
+        self.goal_radii = [0.10, 0.10, 0.10]
+        self.dwell_time_sec = 5.0 # hold at waypoint for 5 seconds
         
         # Control loop rate
         self.control_rate_hz = 20.0  # 20 Hz
@@ -53,6 +59,9 @@ class GoToGoal(Node):
         
         # Obstacle state (robot frame)
         self.obs_vec_robot = np.array([0.0, 0.0])
+        
+        # Anti-oscillation state (NEW: smooth angular velocity)
+        self.prev_angular_vel = 0.0
         
         # Waypoint navigation state
         self.waypoints = self.load_waypoints()
@@ -254,7 +263,21 @@ class GoToGoal(Node):
                 # Angular velocity: proportional to heading error
                 w = self.k_ang * heading_err
                 
-                # Linear velocity: NEW approach behavior for precision
+                # NEW FIX 1: Reduce angular gain when obstacle is close (prevent oscillation)
+                if obs_dist > 0.01 and obs_dist < self.obstacle_proximity_threshold:
+                    angular_damping = self.angular_damping_near_obstacle
+                    w *= angular_damping
+                    self.get_logger().info(
+                        f'Obstacle close ({obs_dist:.2f}m) - damping angular velocity',
+                        throttle_duration_sec=1.0
+                    )
+                
+                # NEW FIX 2: Low-pass filter on angular velocity (smooth out oscillations)
+                w = (self.angular_smoothing_alpha * w + 
+                     (1.0 - self.angular_smoothing_alpha) * self.prev_angular_vel)
+                self.prev_angular_vel = w
+                
+                # Linear velocity: approach behavior for precision
                 # Slow down as we approach goal (improves exponential scoring)
                 if dist < self.approach_slowdown_radius:
                     # Proportional slowdown within approach radius
@@ -275,6 +298,12 @@ class GoToGoal(Node):
                 # Reduce speed when turning sharply
                 if abs(heading_err) > math.radians(45):
                     v *= 0.5
+                
+                # NEW FIX 3: Ensure minimum forward progress when obstacle nearby
+                # (prevents getting stuck oscillating in place)
+                if obs_dist > 0.01 and obs_dist < self.obstacle_proximity_threshold:
+                    if abs(v) < self.min_forward_progress:
+                        v = self.min_forward_progress
             else:
                 # No desired motion
                 v = 0.0
