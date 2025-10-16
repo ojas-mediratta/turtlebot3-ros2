@@ -16,9 +16,9 @@ class GetObjectRange(Node):
         super().__init__('get_object_range')
         
         # ===== TUNABLE PARAMETERS =====
-        self.front_half_angle_deg = 50.0   # scan ±50° forward arc (wider for side detection)
+        self.front_half_angle_deg = 60.0   # scan ±60° forward arc (wider for better side detection)
         self.min_valid_range = 0.05        # ignore readings < 5cm (sensor noise)
-        self.max_considered_range = 2.0    # ignore obstacles beyond 2m
+        self.max_considered_range = 2.5    # ignore obstacles beyond 2.5m
         
         # Clustering parameters (to distinguish obstacles from walls/chairs)
         self.cluster_max_gap = 0.15        # points >15cm apart = different clusters
@@ -50,22 +50,48 @@ class GetObjectRange(Node):
             self.publish_zero_vector()
             return
         
+        num_readings = len(msg.ranges)
         angle_increment = msg.angle_increment
-        angle_min = msg.angle_min
-        total = len(msg.ranges)
         
-        # Find index corresponding to 0 radians (straight ahead)
-        zero_idx = int(round((0.0 - angle_min) / angle_increment))
-        half_span = int(round(math.radians(self.front_half_angle_deg) / angle_increment))
+        # Convert front sector angle to radians
+        half_angle_rad = math.radians(self.front_half_angle_deg)
+        half_angle_indices = int(half_angle_rad / angle_increment)
         
-        # Clamp to valid index range
-        i_start = max(0, zero_idx - half_span)
-        i_end = min(total - 1, zero_idx + half_span)
+        # CRITICAL FIX: Handle LIDAR indexing correctly for wraparound
+        # LIDAR convention: index 0 = front (0°), increases CCW
+        # Right side: negative angles wrap to end of array
+        # Left side: positive angles at start of array
         
         # Collect valid points in forward sector with (x, y, index, range)
         valid_points = []
         
-        for i in range(i_start, i_end + 1):
+        # RIGHT side of front arc (indices wrap from end of array)
+        # angles: [0, -half_angle] → indices: [num-half_angle_indices, num-1]
+        for i in range(num_readings - half_angle_indices, num_readings):
+            r = msg.ranges[i]
+            
+            # Filter invalid/out-of-bounds ranges
+            if not math.isfinite(r):
+                continue
+            if r < self.min_valid_range or r > self.max_considered_range:
+                continue
+            
+            # Angle for this index (wraps negative for right side)
+            angle = (i - num_readings) * angle_increment
+            x = r * math.cos(angle)
+            y = r * math.sin(angle)
+            valid_points.append((x, y, i, r))
+        
+        # FRONT (index 0)
+        r = msg.ranges[0]
+        if math.isfinite(r) and self.min_valid_range <= r <= self.max_considered_range:
+            x = r
+            y = 0.0
+            valid_points.append((x, y, 0, r))
+        
+        # LEFT side of front arc
+        # angles: [0, +half_angle] → indices: [1, half_angle_indices]
+        for i in range(1, min(half_angle_indices + 1, num_readings)):
             r = msg.ranges[i]
             
             # Filter invalid/out-of-bounds ranges
@@ -75,7 +101,7 @@ class GetObjectRange(Node):
                 continue
             
             # Convert to Cartesian coordinates in robot frame
-            angle = angle_min + i * angle_increment
+            angle = i * angle_increment
             x = r * math.cos(angle)
             y = r * math.sin(angle)
             valid_points.append((x, y, i, r))

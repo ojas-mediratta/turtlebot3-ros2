@@ -29,10 +29,10 @@ class GoToGoal(Node):
         self.min_approach_speed = 0.075         # minimum speed when very close
         
         # Anti-oscillation parameters 
-        self.angular_damping_near_obstacle = 0.3  # reduce angular gain when obstacle close
+        self.angular_damping_near_obstacle = 0.55  # reduce angular gain when obstacle close
         self.obstacle_proximity_threshold = 0.5   # consider obstacle "close" at this distance
         self.min_forward_progress = 0.10          # minimum linear velocity to maintain forward motion
-        self.angular_smoothing_alpha = 0.2        # low-pass filter for angular velocity (0-1)
+        self.angular_smoothing_alpha = 0.4        # low-pass filter for angular velocity (0-1)
         
         # Speed limits (LAB REQUIREMENTS - DO NOT EXCEED)
         self.max_v = 0.20          # m/s (lab hard limit)
