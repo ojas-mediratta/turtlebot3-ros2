@@ -1,31 +1,32 @@
 # ROS 2 and TurtleBot3 — Coursework, Projects & Experiments
 
-This repository contains my personal coursework, experiments, and research explorations with the TurtleBot3 platform under **ROS 2**, primarily for **CS 7785: Introduction to Robotics Research** at Georgia Tech.  
+This repository contains my personal coursework, experiments, and research explorations with the **TurtleBot3** platform under **ROS 2**, primarily for **CS 7785: Introduction to Robotics Research** at Georgia Tech.  
 It is intended as a personal record and reference, **not** a solutions repository.
 
 ---
 
 ## 🛠️ Tech & Tools
 
-- **Languages**: Python, C++
-- **Frameworks / Libraries**: ROS 2 Humble (or compatible), OpenCV, PyTorch / TensorFlow  
-- **Platforms / Simulators**: TurtleBot3 (real or simulated), Gazebo, RQT / RViz
+- **Languages:** Python, C++  
+- **Frameworks / Libraries:** ROS 2 Humble, OpenCV, Nav2, PyTorch / TensorFlow  
+- **Platforms / Simulators:** TurtleBot3 (Burger / Waffle Pi), Gazebo, RViz, RQT  
 
 ---
 
 ## 🚀 Goals & Themes
 
-- Build hands-on skills in robotics research workflows  
-- Explore algorithms spanning perception, planning, and control  
-- Maintain reproducible workflows and documented experiments  
+- Build hands-on proficiency in ROS 2 architecture and robotics workflows  
+- Explore the integration of **perception**, **control**, **mapping**, and **planning**  
+- Maintain clear documentation and reproducible experiments for future research  
 
 ---
 
 ## 📂 Repository Layout & Lab Overviews
 
-- `lab2_ws/` — ROS2 workspace and code for Lab 2 experiments  
-- `lab3_ws/` — ROS2 workspace and code for Lab 3  
-- `lab4_ws/` — ROS2 workspace and code for Lab 4  
+- `lab2_ws/` — Perception & Object Tracking  
+- `lab3_ws/` — Sensor Fusion & PID Chasing  
+- `lab4_ws/` — Go-to-Goal & Obstacle Avoidance  
+- `lab5_ws/` — Mapping, Localization & Waypoint Navigation  
 - `README.md` — this file  
 
 ---
@@ -33,50 +34,76 @@ It is intended as a personal record and reference, **not** a solutions repositor
 <details>
 <summary><b>Lab 2 – Perception & Object Tracking (`lab2_ws`)</b></summary>
 
-**Purpose**: Set up a ROS2 perception pipeline to detect and track a colored object, publish detection outputs, and link to simple robot motion.
+**Purpose:** Establish a ROS 2 perception pipeline for detecting and tracking colored objects via camera input.
 
-**Key files and modules:**
-- `find_object.py` — Subscribes to an image topic, applies HSV thresholding and contour detection, and publishes both processed images and object coordinates.  
-- `rotate_robot.py` — Publishes `Twist` commands to `/cmd_vel` to rotate the robot for verification.  
-- Launch/config files — Bring up camera, perception, and control nodes with adjustable thresholds.
-
-</details>
-
----
-
-<details>
-<summary><b>Lab 3 – Sensor Fusion, PID Control & Object Chasing (`lab3_ws`)</b></summary>
-
-**Purpose**: Combine camera and LIDAR sensing for a closed-loop control system that chases a detected object.  
-
-**Key files and modules:**
-- **Vision / Detection Node** — Extracts the angular bearing of a tracked object.  
-- **Range / Scan Node** — Processes `/scan` data to determine object distance.  
-- **Chasing Controller** — Implements cascaded PIDs for angular and distance control, publishing `Twist` messages to `/cmd_vel`.  
-- Launch/config files — Integrate all nodes with tuned parameters for stability and response.
+**Highlights:**
+- Implemented **HSV-based segmentation** and contour detection using OpenCV.  
+- Published centroid data and processed image streams to ROS topics.  
+- Integrated **teleoperation and automated motion testing** using custom `Twist` publishers.  
+- Developed modular launch files for quick sensor and node bring-up.
 
 </details>
 
 ---
 
 <details>
-<summary><b>Lab 4 – Go-to-Goal with Obstacle Avoidance (`lab4_ws`)</b></summary>
+<summary><b>Lab 3 – Sensor Fusion & PID Object Chasing (`lab3_ws`)</b></summary>
 
-**Purpose**: Develop autonomous navigation behaviors using odometry and LIDAR data to reach a goal position while avoiding obstacles.
+**Purpose:** Fuse visual and LIDAR data for a cascaded PID controller that maintains distance and orientation to a moving object.
 
-**Key files and modules:**
-- `get_object_range.py` — Subscribes to `/scan`, detects nearby obstacles, and publishes a vector to the closest object as `/obstacle_vector` (`geometry_msgs/Vector3`).  
-- `go_to_goal.py` — Subscribes to `/odom` and `/obstacle_vector`, computes velocity commands for goal-directed navigation with reactive obstacle avoidance, and publishes `/cmd_vel` (`geometry_msgs/Twist`).  
-- `turtlebot3_bringup.launch.py` — Initializes onboard drivers and sensors, including `/scan` and `/odom` publishers.  
-- Launch configuration — Integrates all nodes into a single pipeline for autonomous navigation.  
-- See the `lab4_ws/README.md` for the full computational diagram.
+**Highlights:**
+- Extracted angular bearing from vision node and range data from `/scan`.  
+- Designed **cascaded proportional controllers** for angular alignment and linear velocity.  
+- Demonstrated smooth pursuit behavior in both Gazebo and on real TurtleBot3 hardware.  
+- Introduced feedback tuning methods and discrete-time controller analysis.
 
 </details>
+
+---
+
+<details>
+<summary><b>Lab 4 – Go-to-Goal with Reactive Obstacle Avoidance (`lab4_ws`)</b></summary>
+
+**Purpose:** Develop autonomous goal navigation using odometry and LIDAR to reach a target pose while avoiding obstacles.
+
+**Highlights:**
+- Created an **obstacle-vector generator** from `/scan` data and integrated it with odometry feedback.  
+- Implemented a **hybrid control policy** combining goal attraction and obstacle repulsion.  
+- Added runtime parameterization via YAML config and dynamic re-launching for tuning.  
+- Validated algorithm performance through real-time RViz visualization and motion logs.
+
+</details>
+
+---
+
+<details>
+<summary><b>Lab 5 – Mapping, Localization & Waypoint Navigation (`lab5_ws`)</b></summary>
+
+**Purpose:** Integrate **SLAM, localization, and autonomous global navigation** using the **ROS 2 Nav2** stack. This lab transitions from custom controllers to a full-featured navigation framework, emphasizing configuration, tuning, and system-level understanding.
+
+**Highlights:**
+- **Mapping (SLAM):** Used `slam_toolbox` and teleoperation to generate occupancy maps in both real and simulated environments.  
+- **Localization:** Configured **AMCL** (Adaptive Monte Carlo Localization) for robust pose estimation using laser scans and odometry.  
+- **Path Planning:** Implemented **A\*** and **Dijkstra-based** global planning with **DWB** and **Pure Pursuit** local controllers, fine-tuned via YAML parameters.  
+- **Waypoint Automation:** Developed a ROS 2 node that publishes `PoseStamped` goals to the `/goal_pose` topic, sequencing multiple global waypoints.  
+- **Gazebo Testing:** Executed navigation in a custom maze environment with static and dynamic obstacles; verified real-world transferability.  
+- **Parameter Tuning:** Adjusted costmap resolution, inflation radius, and control frequency for stable navigation performance.  
+- **Evaluation:** Demonstrated full autonomous traversal between three arbitrary waypoints in both Gazebo and physical maze tests.
+
+</details>
+
+---
+
+## 🧭 Looking Ahead
+
+Future work will involve:
+- Extending the navigation pipeline with **SLAM fusion** and **dynamic obstacle prediction**.  
+- Experimenting with **semantic mapping** and **learned control policies** via reinforcement learning.  
+- Integrating **ROS 2 Nav2 with onboard vision nodes** for multi-sensor navigation on the TurtleBot3.  
 
 ---
 
 ## ⚠️ Academic Integrity & Usage
 
-Everything in this repository is **my original work** for CS 7785.  
-This is **not** a solutions manual and should **not** be used for direct submission in any course.  
-If you are a student, please follow the **Georgia Tech Honor Code** — use this repository *only* for learning, reference **after** you’ve done your own work, or inspiration (not copy-paste).
+Everything in this repository is **my original work** for **CS 7785 (Introduction to Robotics Research)**.  
+This repository is for **learning and reference only** — please follow the **Georgia Tech Honor Code**.  
