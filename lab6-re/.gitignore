@@ -2,5 +2,4 @@
 *.pkl
 data/
 MASTER_TRAIN/
-SPLIT/
 *.png
