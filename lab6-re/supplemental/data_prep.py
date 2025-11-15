@@ -8,79 +8,8 @@ import random
 from sklearn.model_selection import train_test_split
 from collections import Counter
 
-# --- Configuration ---
-# All processed images (cropped, augmented) will be resized to this.
-IMG_SIZE = (128, 128)
-
-# --- Cropping Function ---
-
-def crop_sign(image):
-    """
-    Finds the largest sign-like object in the image using color segmentation,
-    crops it, and resizes it.
-    
-    Returns:
-        A resized image (IMG_SIZE, IMG_SIZE, 3) or None if no contour is found.
-    """
-    hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-
-    # Define HSV color ranges for the signs
-    # Note: Red wraps around in HSV, so we need two ranges
-    # These ranges are tuned for the sample images (red, blue, green/yellow)
-    lower_red1 = np.array([0, 70, 70])
-    upper_red1 = np.array([10, 255, 255])
-    lower_red2 = np.array([160, 70, 70])
-    upper_red2 = np.array([180, 255, 255])
-    
-    # Blue range
-    lower_blue = np.array([100, 150, 50])
-    upper_blue = np.array([140, 255, 255])
-    
-    # Yellow/Green range
-    lower_green_yellow = np.array([25, 50, 70])
-    upper_green_yellow = np.array([90, 255, 255])
-
-    # Create masks
-    mask_r1 = cv2.inRange(hsv, lower_red1, upper_red1)
-    mask_r2 = cv2.inRange(hsv, lower_red2, upper_red2)
-    mask_b = cv2.inRange(hsv, lower_blue, upper_blue)
-    mask_gy = cv2.inRange(hsv, lower_green_yellow, upper_green_yellow)
-    
-    # Combine masks
-    combined_mask = mask_r1 | mask_r2 | mask_b | mask_gy
-
-    # Find contours
-    contours, _ = cv2.findContours(combined_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    
-    if not contours:
-        # No sign detected. Could be class 0.
-        # We return the whole image, resized, as a fallback.
-        return cv2.resize(image, IMG_SIZE)
-
-    # Find the largest contour by area
-    largest_contour = max(contours, key=cv2.contourArea)
-    
-    # Get the bounding box
-    x, y, w, h = cv2.boundingRect(largest_contour)
-    
-    # Add some padding (e.g., 10% of width/height)
-    pad_w = int(w * 0.10)
-    pad_h = int(h * 0.10)
-    
-    # Clamp coordinates to be within the image bounds
-    y1 = max(0, y - pad_h)
-    y2 = min(image.shape[0], y + h + pad_h)
-    x1 = max(0, x - pad_w)
-    x2 = min(image.shape[1], x + w + pad_w)
-    
-    cropped_image = image[y1:y2, x1:x2]
-    
-    if cropped_image.size == 0:
-        # Fallback in case of bad crop
-        return cv2.resize(image, IMG_SIZE)
-        
-    # Resize the cropped image to our standard size
-    return cv2.resize(cropped_image, IMG_SIZE)
+# Import the shared cropping function
+from utils import crop_sign
 
 # --- Augmentation Functions ---
 
@@ -117,7 +46,7 @@ def apply_augmentations(image, label):
 
     # 4. Rotation
     # Apply only to rotation-invariant classes
-    if label in [0, 3, 4, 5]:
+    if label in [0, 1, 2, 3, 4, 5]:
         angle = random.uniform(-15, 15)
         (h, w) = image.shape[:2]
         center = (w // 2, h // 2)
@@ -126,6 +55,51 @@ def apply_augmentations(image, label):
         augmented_images.append(rotated_img)
         augmented_labels.append(label)
 
+    # --- DISABLING for now to reduce overfitting ---
+
+    # # 5. Gaussian Blur
+    # # Simulates an out-of-focus camera
+    # blur_img = cv2.GaussianBlur(image, (5, 5), 0)
+    # augmented_images.append(blur_img)
+    # augmented_labels.append(label)
+    
+    # # 6. Gaussian Noise
+    # # Simulates camera sensor noise
+    # # We add noise to the int16 version, then clip back to uint8
+    # noise = np.random.normal(0, 10, image.shape) # 10 std dev
+    # noise_img = np.clip(image.astype(np.int16) + noise.astype(np.int16), 0, 255).astype(np.uint8)
+    # augmented_images.append(noise_img)
+    # augmented_labels.append(label)
+    
+    # 7. Random Crop (Zoom)
+    # Simulates the sign being slightly off-center
+    scale = random.uniform(0.85, 1.0) # Zoom in by 0% to 15%
+    (h, w) = image.shape[:2]
+    crop_h, crop_w = int(h * scale), int(w * scale)
+    y_start = random.randint(0, h - crop_h)
+    x_start = random.randint(0, w - crop_w)
+    crop_img = image[y_start:y_start+crop_h, x_start:x_start+crop_w]
+    crop_img = cv2.resize(crop_img, (w, h)) # Resize back to standard size
+    augmented_images.append(crop_img)
+    augmented_labels.append(label)
+    
+    # 8. Perspective Shear
+    # Simulates viewing the sign from a slight angle
+    (h, w) = image.shape[:2]
+    pts1 = np.float32([[0, 0], [w, 0], [0, h], [w, h]])
+    # Shear horizontally by up to 10%
+    shear_val = random.uniform(-0.1, 0.1)
+    pts2 = np.float32([
+        [int(w * shear_val), 0],  # Top-left
+        [w, 0],                  # Top-right
+        [0, h],                  # Bottom-left
+        [int(w * (1 + shear_val)), h] # Bottom-right (shifted)
+    ])
+    M = cv2.getPerspectiveTransform(pts1, pts2)
+    shear_img = cv2.warpPerspective(image, M, (w, h), borderValue=(0,0,0))
+    augmented_images.append(shear_img)
+    augmented_labels.append(label)
+    
     return augmented_images, augmented_labels
 
 # --- Core Data Processing ---
@@ -169,7 +143,7 @@ def load_all_data(data_dir):
     print(f"Found {len(all_data)} total images.")
     return all_data
 
-def process_and_save_data(data_list, output_dir, apply_augmentations):
+def process_and_save_data(data_list, output_dir, do_augmentations):
     """
     Processes a list of (path, label) tuples and saves them to the output dir.
     Applies cropping and (optionally) augmentations.
@@ -198,7 +172,7 @@ def process_and_save_data(data_list, output_dir, apply_augmentations):
                 continue
 
             # --- 2. Augmentation ---
-            if apply_augmentations:
+            if do_augmentations:
                 images_to_save, labels_to_save = apply_augmentations(cropped_image, label)
             else:
                 # For test set, just save the single cropped image
@@ -253,34 +227,42 @@ def main():
     print(f"Original data distribution: {Counter(y_labels)}")
 
     # 3. Create Stratified Split
-    print(f"Splitting data ({1.0 - args.test_split} train / {args.test_split} test)...")
-    try:
-        train_data, test_data = train_test_split(
-            all_data,
-            test_size=args.test_split,
-            stratify=y_labels,
-            random_state=args.seed
-        )
-    except ValueError as e:
-        print(f"Warning: Could not perform stratified split. Using regular split. Error: {e}")
-        train_data, test_data = train_test_split(
-            all_data,
-            test_size=args.test_split,
-            random_state=args.seed
-        )
-
+    # MODIFIED: Handle test_split = 0.0
+    if args.test_split > 0.0:
+        print(f"Splitting data ({1.0 - args.test_split} train / {args.test_split} test)...")
+        try:
+            train_data, test_data = train_test_split(
+                all_data,
+                test_size=args.test_split,
+                stratify=y_labels,
+                random_state=args.seed
+            )
+        except ValueError as e:
+            print(f"Warning: Could not perform stratified split. Using regular split. Error: {e}")
+            train_data, test_data = train_test_split(
+                all_data,
+                test_size=args.test_split,
+                random_state=args.seed
+            )
+        
+        print(f"Test set size: {len(test_data)}")
+        print(f"Test distribution: {Counter([label for _, label in test_data])}")
+    
+    else:
+        print("Test split is 0.0. Using 100% of data for training.")
+        train_data = all_data
+        test_data = [] # Create an empty list for the test set
+        
     print(f"Train set size: {len(train_data)}")
-    print(f"Test set size: {len(test_data)}")
     print(f"Train distribution: {Counter([label for _, label in train_data])}")
-    print(f"Test distribution: {Counter([label for _, label in test_data])}")
 
     # 4. Process and Save TRAIN data (with augmentations)
     print("\nProcessing TRAINING data (cropping + augmentations)...")
-    process_and_save_data(train_data, train_dir, apply_augmentations=True)
+    process_and_save_data(train_data, train_dir, do_augmentations=True)
 
     # 5. Process and Save TEST data (cropping only)
     print("\nProcessing TESTING data (cropping only)...")
-    process_and_save_data(test_data, test_dir, apply_augmentations=False)
+    process_and_save_data(test_data, test_dir, do_augmentations=False)
 
     print("\nData preparation complete!")
     print(f"Train data saved to: {train_dir}")

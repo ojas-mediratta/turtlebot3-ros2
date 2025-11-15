@@ -6,9 +6,17 @@ import csv
 import cv2
 import numpy as np
 
+
+# --- 1. MODIFIED: imports ---
+
+import pickle
+from supplemental.utils import crop_sign, extract_features
+
 # ------------------------------------------------------------------------------
 #                  DO NOT MODIFY FUNCTION NAMES OR ARGUMENTS
 # ------------------------------------------------------------------------------
+
+PREDICTION_THRESHOLD = 0.41 # Default threshold; can be modified in predict()
 
 def initialize_model(model_path=None):
     """
@@ -22,14 +30,23 @@ def initialize_model(model_path=None):
         model: Your trained model.
     """
 
-    # TODO: Load your trained model here.
-    # For example, if you saved your model using pickle or a deep learning framework,
-    # load it and return the model object.
+    # --- 2. MODIFIED: initialize_model ---
+    # Load the trained model from the .pkl file
     
-    model = None
-
-    raise NotImplementedError("initialize_model() is not implemented. Please implement this function.")
-
+    if model_path is None:
+        raise ValueError("Error: --model_path is required to load a .pkl model.")
+    
+    print(f"Loading model from: {model_path}")
+    
+    try:
+        with open(model_path, 'rb') as f:
+            model = pickle.load(f)
+    except Exception as e:
+        print(f"Error: Failed to load model from {model_path}. {e}")
+        sys.exit(1)
+        
+    print("Model loaded successfully.")
+    
     return model
 
 def predict(model, image):
@@ -45,16 +62,41 @@ def predict(model, image):
     Returns:
         int: The predicted class label.
     """
-
-    # TODO: Implement your model's prediction logic here.
-    # The function should return an integer corresponding to the predicted class.
+    # --- 3. MODIFIED: predict (V4 2-STAGE LOGIC) ---
     
-    prediction = None
+    # 1. Crop the image
+    # crop_sign() will return None if no sign is found
+    cropped_image = crop_sign(image)
     
-    raise NotImplementedError("predict() is not implemented. Please implement this function.")
+    if cropped_image is None:
+        # Stage 1: No sign found by color detection.
+        # Predict Class 0.
+        return 0
+        
+    # Stage 2: A sign was found. Let the SVM (Classes 1-5) decide.
     
-    return prediction
-
+    # 2. Extract features (HOG + Color)
+    features = extract_features(cropped_image)
+    
+    # 3. Reshape features for the model
+    features_2d = features.reshape(1, -1)
+    
+    # 4. Predict with confidence threshold
+    probabilities = model.predict_proba(features_2d)[0]
+    max_prob = np.max(probabilities)
+    
+    final_prediction = 0 # Default to 0
+    
+    if PREDICTION_THRESHOLD > 0.0 and max_prob < PREDICTION_THRESHOLD:
+        # SVM is not confident *which* sign it is,
+        # so it's probably noise. Override to 0.
+        final_prediction = 0
+    else:
+        # SVM is confident. Use its prediction (1-5).
+        final_prediction = model.predict(features_2d)[0]
+    
+    # Return the prediction as a single integer
+    return int(final_prediction)
 # ------------------------------------------------------------------------------
 #                      DO NOT MODIFY ANY CODE BELOW THIS LINE
 # ------------------------------------------------------------------------------
