@@ -85,6 +85,17 @@ class MazeSolver(Node):
         # Verification Variables
         self.verify_stage = VERIFY_INIT
         self.verify_votes = []
+        # Decision hysteresis / cooldown (seconds)
+        self.last_scan_decision = 0
+        self.last_scan_time = 0.0
+        self.decision_cooldown_until = 0.0
+        self.decision_hysteresis_time = 2.0  # require same decision to persist within this window
+        self.decision_cooldown_seconds = 2.0  # after executing a decision, ignore new ones for this many seconds
+        # Pending decision (used when a corrective turn is performed first)
+        self.pending_decision = None
+        # Settle after turn to avoid moving while still rotating
+        self.settle_after_turn = 0.35
+        self.settle_until = 0.0
         
         # --- 2. Dynamic Model Loading ---
         pkg_share = get_package_share_directory('autobots_sign_follower')
@@ -312,25 +323,47 @@ class MazeSolver(Node):
     # --- SCANNING LOGIC ---
 
     def run_scan_logic(self, image, debug_image):
+        # Respect decision cooldown: ignore fresh decisions while cooling down
+        now = time.time()
+        if now < self.decision_cooldown_until:
+            # throttle this log to avoid spamming
+            self.log_throttle("Decision cooldown active, ignoring scan result.")
+            return
+
         votes = self.get_augmented_votes(image)
         final_decision = 0
         if votes:
             final_decision = Counter(votes).most_common(1)[0][0]
-            
+
         if final_decision != 0:
-             cv2.putText(debug_image, f"Vote: {final_decision}", (5, 75), 
+            cv2.putText(debug_image, f"Vote: {final_decision}", (5, 75), 
                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
 
-        if final_decision != 0:
-            if abs(self.accumulated_wiggle) > 1.0:
-                 self.get_logger().info(f"Correcting wiggle ({self.accumulated_wiggle} deg) before action.")
-                 self.initiate_turn(-self.accumulated_wiggle, "Center Action")
-                 self.pending_decision = final_decision
-                 self.state = STATE_TURN 
-                 return 
+            # Hysteresis: require the same non-zero decision to be observed twice
+            # within `decision_hysteresis_time` seconds before acting.
+            if final_decision == self.last_scan_decision and (now - self.last_scan_time) <= self.decision_hysteresis_time:
+                # Confirmed decision — act on it
+                if abs(self.accumulated_wiggle) > 1.0:
+                    self.get_logger().info(f"Correcting wiggle ({self.accumulated_wiggle} deg) before action.")
+                    self.initiate_turn(-self.accumulated_wiggle, "Center Action")
+                    self.pending_decision = final_decision
+                    self.state = STATE_TURN 
+                    # reset last_scan to avoid immediate re-trigger
+                    self.last_scan_decision = 0
+                    self.last_scan_time = 0.0
+                    return 
 
-            self.execute_decision(final_decision)
-            return
+                self.execute_decision(final_decision)
+                # execute_decision will set cooldown; clear last_scan
+                self.last_scan_decision = 0
+                self.last_scan_time = 0.0
+                return
+            else:
+                # Store this observation and wait for confirmation
+                self.last_scan_decision = final_decision
+                self.last_scan_time = now
+                self.get_logger().info(f"Seen {final_decision}, waiting for confirmation.")
+                return
 
         # Wiggle Logic
         if self.scan_stage == SCAN_CENTER:
@@ -370,6 +403,11 @@ class MazeSolver(Node):
             
         else:
             self.initiate_turn(self.last_turn_direction, "Fallback")
+        # For non-goal decisions, start a short cooldown to avoid immediate
+        # contradictory re-decisions (helps prevent flip-flop loops).
+        if sign_class != 5:
+            self.decision_cooldown_until = time.time() + self.decision_cooldown_seconds
+            self.get_logger().info(f"Decision executed: {sign_class}. Cooling until {self.decision_cooldown_until:.2f}")
 
     # --- MOTION CONTROL ---
 
@@ -437,6 +475,12 @@ class MazeSolver(Node):
 
         # --- STATE: DRIVE ---
         if self.state == STATE_DRIVE:
+            # If we're still settling from a recent turn, don't drive forward yet
+            if time.time() < self.settle_until:
+                twist.linear.x = 0.0
+                twist.angular.z = 0.0
+                self.cmd_pub.publish(twist)
+                return
             if self.desired_heading is None:
                 self.desired_heading = self.current_yaw
             
@@ -555,7 +599,7 @@ class MazeSolver(Node):
             
             if abs(yaw_error) < 0.08:
                 self.get_logger().info("Turn Done.")
-                
+
                 if self.state == STATE_WIGGLE:
                     if self.scan_stage == 99:
                         self.state = STATE_SCAN 
@@ -567,9 +611,19 @@ class MazeSolver(Node):
                         else:
                              self.state = STATE_SCAN
                 else:
-                    self.state = STATE_DRIVE
-                    self.desired_heading = None 
-                
+                    # If a pending decision was set (e.g., we corrected a wiggle
+                    # and stored the desired action), execute it now. Otherwise
+                    # return to DRIVE and settle briefly before moving.
+                    if self.pending_decision is not None:
+                        pd = self.pending_decision
+                        self.pending_decision = None
+                        self.get_logger().info(f"Executing pending decision: {pd}")
+                        self.execute_decision(pd)
+                    else:
+                        self.state = STATE_DRIVE
+                        self.desired_heading = None
+                        self.settle_until = time.time() + self.settle_after_turn
+
                 twist.angular.z = 0.0
                 self.cmd_pub.publish(twist)
                 return
