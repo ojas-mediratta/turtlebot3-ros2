@@ -379,72 +379,66 @@ class MazeSolver(Node):
         
         return is_blue_present, is_red_present
 
-    # --- SOUND FUNCTIONS ---
-
     def play_goal_music(self):
         """Starts the physical buzzer thread."""
-        if not HAS_SOUND_MSG or self.sound_pub is None:
-            if not self.music_playing: # Log once
-                self.get_logger().info("Audio: No Sound hardware. Skipping.")
-                self.music_playing = True # Fake it
-            return
+        if self.sound_pub is None: return
         
         if not self.music_playing:
             self.music_playing = True
-            self.music_thread = threading.Thread(target=self._sound_thread_func)
+            self.music_thread = threading.Thread(target=self._play_physical_buzzer_tune)
             self.music_thread.start()
-            self.get_logger().info("Audio: Starting buzzer sequence.")
+            self.get_logger().info("Starting Physical Buzzer Sequence!")
 
     def stop_music(self):
-        """Stops the buzzer thread."""
         self.music_playing = False
         if self.music_thread:
             self.music_thread.join(timeout=0.2)
             self.music_thread = None
-        
-        # Force OFF
-        if self.sound_pub and HAS_SOUND_MSG:
-            msg = Sound()
-            msg.value = 0 # OFF
-            self.sound_pub.publish(msg)
+            
+            # Ensure buzzer is OFF
+            if self.sound_pub:
+                msg_off = Sound()
+                msg_off.value = 0
+                self.sound_pub.publish(msg_off)
 
-    def _sound_thread_func(self):
-        """Background thread to generate buzzer patterns."""
-        if not self.sound_pub: return
-
+    def _play_physical_buzzer_tune(self):
+        """
+        Plays a rhythmic beat using the TB3 Buzzer (ON/OFF).
+        Sound(value=1) is ON, Sound(value=0) is OFF.
+        """
         msg_on = Sound()
-        msg_on.value = 1 # ON
+        msg_on.value = 1
         msg_off = Sound()
-        msg_off.value = 0 # OFF
-
+        msg_off.value = 0
+        
         while self.music_playing and rclpy.ok():
-            # Determine pattern based on state
-            if self.state == STATE_PREPARE_GOAL or self.state == STATE_PREPARE_UTURN:
-                # Suspense: Regular slow beeps
-                self.sound_pub.publish(msg_on)
-                time.sleep(0.1)
-                self.sound_pub.publish(msg_off)
-                time.sleep(0.4)
-                
-            elif self.state == STATE_GOAL:
-                # Victory: Random fast sequence
-                self.sound_pub.publish(msg_on)
-                # Random ON duration 0.05 to 0.15
-                time.sleep(random.uniform(0.05, 0.15)) 
-                self.sound_pub.publish(msg_off)
-                # Random OFF duration 0.05 to 0.2
-                time.sleep(random.uniform(0.05, 0.2))
-                
-            elif self.state == STATE_VERIFY_GOAL:
-                 # Verification: Faster heartbeat
-                self.sound_pub.publish(msg_on)
-                time.sleep(0.05)
-                self.sound_pub.publish(msg_off)
-                time.sleep(0.15)
-                
-            else:
-                # Should not happen if logic is correct, but just wait
-                time.sleep(0.5)
+            # Pattern: Beep... Beep... Beep-Beep (Suspense-ish)
+            
+            # 1. Beep
+            self.sound_pub.publish(msg_on)
+            time.sleep(0.15)
+            self.sound_pub.publish(msg_off)
+            time.sleep(0.3)
+            if not self.music_playing: break
+            
+            # 2. Beep
+            self.sound_pub.publish(msg_on)
+            time.sleep(0.15)
+            self.sound_pub.publish(msg_off)
+            time.sleep(0.3)
+            if not self.music_playing: break
+            
+            # 3. Double Beep
+            self.sound_pub.publish(msg_on)
+            time.sleep(0.1)
+            self.sound_pub.publish(msg_off)
+            time.sleep(0.1)
+            self.sound_pub.publish(msg_on)
+            time.sleep(0.1)
+            self.sound_pub.publish(msg_off)
+            
+            # Pause before loop
+            time.sleep(0.8)
 
     def get_augmented_votes(self, image):
         """
